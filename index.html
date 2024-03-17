@@ -5,30 +5,35 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://md-block.verou.me/md-block.js"></script>
 </head>
 
 <body>
   <div
-    class="grid grid-rows-[auto auto 1fr auto] min-h-screen gap-4 px-16 md:px-32 lg:px-64 xlg:px-96 md:grid-rows-[auto auto] justify-center">
-    <header class="flex flex-col items-center gap-2">
-      <div class="flex flex-col items-center gap-1 text-center"><span class="text-2xl font-semibold">Professional Rubber
-          Duck</span>
-        <nav class="flex items-center gap-2"><a href="#">About</a><a href="#">Skills</a><a href="#">Blog</a><a
-            href="#">Contact</a></nav>
-      </div>
+    class="grid grid-rows-[auto auto 1fr auto] min-h-screen gap-4 py-6 px-16 md:px-32 lg:px-64 xlg:px-96 md:grid-rows-[auto auto] justify-center">
+    <header class="flex items-center justify-between gap-4">
+      <span>
+        <div class="flex text-2xl font-semibold">
+          Ryan Mavilia
+        </div>
+      </span>
+      <nav class="text-xl underline flex items-center gap-4">
+        <a href="#" rel="ugc">
+          About
+        </a>
+        <a href="#" rel="ugc">
+          Skills
+        </a>
+        <a href="#" rel="ugc">
+          Blog
+        </a>
+        <a href="#" rel="ugc">
+          Contact
+        </a>
+      </nav>
     </header>
     <main class="flex flex-col gap-4">
       <section class="flex flex-col gap-4">
-        <div class="flex flex-col items-center gap-2"><img src="./profile.jpg" width="150" height="150 "
-            alt="Profile picture" class="rounded-full" style="aspect-ratio: 150 / 150; object-fit: cover;">
-          <div class="flex flex-col items-center gap-1">
-            <h1 class="text-3xl font-bold">Ryan Mavilia</h1>
-            <p class="text-center">
-              Software engineer with a passion for creating elegant
-              solutions. Looking for new opportunities.
-            </p>
-          </div>
-        </div>
         <!-- ABOUT ME SECTION -->
         <!-- <div class="flex flex-col gap-2"> -->
         <!--   <h2 class="text-2xl font-bold">About Me</h2> -->
@@ -40,34 +45,68 @@
         <!--   </p> -->
         <!-- </div> -->
       </section>
-      <section class="flex pt-8 flex-col gap-4">
-        <h2 class="text-2xl font-bold">Recent Articles</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="p-4 bg-gray-100 rounded-lg">
-            <h3 class="text-xl font-semibold">Article Title 1</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+      <!-- BLOG SECTION -->
+      <section>
+        <div class="grid gap-4 mx-auto">
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+            <div class="p-6 flex flex-col gap-2">
+              <h3 class="text-xl font-bold">
+                The Art of Debugging: A Guide to Finding and Fixing Software Bugs
+              </h3>
+              <p class="text-sm text-gray-500">
+                Posted on August 23, 2023
+              </p>
+              <p class="line-clamp-2">
+                We've all been there: staring at a screen, trying to figure out why our code isn't working as
+                expected...
+              </p>
+            </div>
+            <div class="flex items-center p-6"><button
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3">
+                Read More
+              </button></div>
           </div>
-          <div class="p-4 bg-gray-100 rounded-lg">
-            <h3 class="text-xl font-semibold">Article Title 2</h3>
-            <p>
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco
-              laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+            <div class="p-6 flex flex-col gap-2">
+              <h3 class="text-xl font-bold">
+                Building Responsive Web Apps with React and Tailwind CSS
+              </h3>
+              <p class="text-sm text-gray-500">
+                Posted on July 15, 2023
+              </p>
+              <p class="line-clamp-2">
+                In today's digital world, users expect web applications to be fast, intuitive, and beautiful...
+              </p>
+            </div>
+            <div class="flex items-center p-6"><button
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3">
+                Read More
+              </button></div>
           </div>
-          <div class="p-4 bg-gray-100 rounded-lg">
-            <h3 class="text-xl font-semibold">Article Title 3</h3>
-            <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur.
-            </p>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+            <div class="p-6 flex flex-col gap-2">
+              <h3 class="text-xl font-bold">
+                The Future of Frontend Frameworks: A Look at SvelteKit, Astro, and Remix
+              </h3>
+              <p class="text-sm text-gray-500">
+                Posted on June 5, 2023
+              </p>
+              <p class="line-clamp-2">
+                As web developers, we're always looking for the next big thing in frontend frameworks...
+              </p>
+            </div>
+            <div class="flex items-center p-6"><button
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3">
+                Read More
+              </button></div>
           </div>
+          <div class="flex justify-center"><a class="text-blue-600 font-semibold" href="blog.html">
+              View All</a></div>
+
         </div>
-        <div class="flex justify-center"><a class="text-blue-600 font-semibold" href="blog.html">
-            View All</a></div>
+
       </section>
+
       <section class="flex flex-col gap-4">
         <h2 class="text-2xl font-bold">Skills</h2>
         <div class="grid gap-4 md:grid-cols-2">
@@ -120,6 +159,7 @@
             Vue.js</div>
         </div>
       </section>
+
 
     </main>
     <footer class="flex items-center justify-center gap-4 p-4 border-t">
