@@ -1,3 +1,4 @@
+# Choosing the Hard Path
 ## Motivations
 When you think about your future or even the universe's future you realize something. At the end of the day, it all ends. Nothing is permanent and it will all come to a close in one way or another. That's why the idea of legacy projects always seemed odd to me. Now that doesn't include the idea of heaven which I guess would be a good rebuttal but with regards to what we know we are all gonna meet our end one day. 
 
