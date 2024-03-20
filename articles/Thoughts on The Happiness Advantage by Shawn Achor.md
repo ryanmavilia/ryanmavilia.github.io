@@ -1,4 +1,5 @@
 # Thoughts on The Happiness Advantage by Shawn Achor
+>Happiness is not the belief that we don't need to change it is the realization that we can. 
 ## Introduction
 I just finished reading The Happiness Advantage by Shawn Achor who is a corporate speaker and researcher on happiness. I had low expectations going into the book, but it surprised me with some new actionable ideas to apply to my own life. The thing I enjoyed most were all the little anecdotes showcasing how simple things can lead to people feeling happier. The stories gave me a lot of inspiration and led to a lot of thoughts of "maybe things aren't so bad" trickling into my mind. 
 
@@ -6,7 +7,6 @@ As I write this article and do more research on it, I've found that there are so
 
 ## Seven principles summary 
 
->Happiness is not the belief that we don't need to change it is the realization that we can. 
 ### Principle 1: The Happiness Advantage 
 - Positive brains work better so you should retrain your brain to capitalize on positivity. 
 - Those who are happiest perform the best in different areas of their lives. 
