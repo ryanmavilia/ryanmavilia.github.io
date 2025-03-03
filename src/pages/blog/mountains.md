@@ -1,4 +1,16 @@
+---
+layout: ../../layouts/BlogLayout.astro
+title: Mountains to Molehills
+description: Exploring the challenges of starting new projects and finding the right balance between planning and action
+tags: ["development", "productivity"]
+time: 7
+featured: true
+timestamp: 2024-04-02T00:00:00+00:00
+filename: mountains
+---
+
 # Mountains to Molehills
+
 When starting a new project, it's important to be realistic about the challenges involved. I'm working on
 an app that allows users to create collaborative SoundCloud playlists. It was awesome to get the first API
 call to work to just update a playlist with whatever songs I provided. I was so ready to build more
@@ -25,6 +37,7 @@ Future needs are important, but building a complex system from scratch hinders p
 core functionality but as you do so make sure to factor in what design decisions you're making that could
 create issues in the future. When you identify those things consider compromises you can make to mitigate
 them without doing all the work upfront.
+
 ### Real life example
 
 This applies not only to software development but to your life as well. Take renovating a house for
