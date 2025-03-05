@@ -11,7 +11,7 @@ filename: 030425-time-spent
 
 # Where to spend my time(?)
 
-Lately I've been thinking a lot about time spent. As I approach my thirties I'm thinking a lot about what progress I want to make and where. It can't be overstated enough that in today's societed it is difficult to find yourself without something to do.
+Lately I've been thinking a lot about time spent. As I approach my thirties I'm thinking a lot about what progress I want to make and where. It can't be overstated enough that in today's society it is difficult to find yourself without something to do.
 
 I think often back to a video I watched in which the author, who may have been [Clark Kegley](https://www.youtube.com/@clarkkegley), talks about a thought experiment. Think about your life and where you want it to be in 5 years time. What do you want accomplished, projects completed, things acquired/learned, etc. Now think about what your life has looked like for the past 90 days. If you were to continue to repeat those past 90 days for the next 5 years would you end up in the same place that you envisioned?
 
@@ -25,7 +25,7 @@ At the end of the day time on this earth is long but it feels short. Or at least
 
 I think I've wasting time in a few places lately. I've been letting silly social media apps get the best of my time and then feeling exhausted during the rest of my free time. But I've been taking active stands towards using alternative readers that help reduce the "dopamine drip". For reddit I use a personalized [Redlib](https://github.com/redlib-org/redlib) instance that only has relevant and useful content. I have something similar for Youtube through an [Invidious](https://docs.invidious.io/) instance. Instagram I only use the Safari site for messaging and the explore page seems to be broken whether due to one of my extensions or Meta trying to encourage users to switch to the app which works in my favor.
 
-I've also been doing a poor job of managing my food and activity schedules. I eat when I get hungry AND am not busy. The gym is usually reserved for the end of the night. Food for me is an ongoing experiment of figuring out what works for me. Unfortunately I recently acquired a smoker so I haven't been eating the most healthy choices of proteins. As for exercise I've been dealing with some injuries lately as well as new goals which have led me to want to run an experiment. I plan on breaking up my workouts into what some gym rats call "two-a-days". Traditionally these would be two full workouts at separate times during the day. Two separate full workout sessions. For me its just going to be what could be one workout but split into two sessions.
+I've also been doing a poor job of managing my food and activity schedules. I eat when I get hungry AND am not busy. The gym is usually reserved for the end of the night. Food for me is an ongoing experiment of figuring out what works for me. Unfortunately I recently acquired a smoker so I haven't been eating the most healthy choices of proteins. As for exercise I've been dealing with some injuries lately as well as new goals which have led me to want to run an experiment. I plan on breaking up my workouts into what some gym rats call "two-a-days". Traditionally these would be two full workouts at separate times during the day. Two separate full workout sessions. For me it's just going to be what could be one workout but split into two sessions.
 
 My hope is that this two-a-day plan will give a couple of benefits:
 
