@@ -47,10 +47,10 @@ export const featuredArticles = (
     }
   )
 )
-  .filter((project) => project.featured)
+  // remove the filter to show all articles
+  // .filter((project) => project.featured)
   .sort((a, b) => {
     const dateA = new Date(a.timestamp);
     const dateB = new Date(b.timestamp);
     return dateB.getTime() - dateA.getTime();
-  })
-  .slice(0, 3);
+  });
