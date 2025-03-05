@@ -23,14 +23,26 @@ const sourceUrl = generateSourceUrl(frontmatter.filename, "blog");
   <Fragment slot="head">
     <title>{frontmatter.title} • {GLOBAL.username}</title>
     <meta name="description" content={frontmatter.description} />
-    <meta property="og:title" content={`${frontmatter.title} • ${GLOBAL.username}`} />
+    <meta
+      property="og:title"
+      content={`${frontmatter.title} • ${GLOBAL.username}`}
+    />
     <meta property="og:description" content={shortDescription} />
-    <meta property="og:image" content={`${GLOBAL.rootUrl}/${GLOBAL.profileImage}`} />
+    <meta
+      property="og:image"
+      content={`${GLOBAL.rootUrl}/${GLOBAL.profileImage}`}
+    />
     <meta property="og:url" content={frontmatter.url} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`${frontmatter.title} • ${GLOBAL.username}`} />
+    <meta
+      name="twitter:title"
+      content={`${frontmatter.title} • ${GLOBAL.username}`}
+    />
     <meta name="twitter:description" content={shortDescription} />
-    <meta name="twitter:image" content={`${GLOBAL.rootUrl}/${GLOBAL.profileImage}`} />
+    <meta
+      name="twitter:image"
+      content={`${GLOBAL.rootUrl}/${GLOBAL.profileImage}`}
+    />
     <meta http-equiv="content-language" content="en" />
     <meta name="language" content="English" />
     <link rel="canonical" href={sourceUrl} />
@@ -50,6 +62,6 @@ const sourceUrl = generateSourceUrl(frontmatter.filename, "blog");
     <Prose>
       <slot />
     </Prose>
-    <p class="pt-8">~{GLOBAL.username}</p>
+    <p class="pt-8">~ {GLOBAL.username}</p>
   </Section>
 </Layout>
