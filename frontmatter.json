@@ -57,6 +57,16 @@
           "title": "filename",
           "name": "filename",
           "type": "string"
+        },
+        {
+          "title": "keywords",
+          "name": "keywords",
+          "type": "choice",
+          "choices": [
+            "learning",
+            "writing",
+            "narratives"
+          ]
         }
       ]
     }
