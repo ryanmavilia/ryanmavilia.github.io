@@ -67,6 +67,11 @@
             "writing",
             "narratives"
           ]
+        },
+        {
+          "title": "published",
+          "name": "published",
+          "type": "boolean"
         }
       ]
     }

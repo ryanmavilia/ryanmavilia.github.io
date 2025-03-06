@@ -8,6 +8,7 @@ keywords:
   - writing
   - narratives
 slug: power-storytelling-everyday-life
+published: false
 ---
 
 # Importance of Narrative in Life
