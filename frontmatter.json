@@ -19,28 +19,44 @@
       "clearEmpty": true,
       "fields": [
         {
-          "title": "Title",
-          "name": "title",
-          "type": "string",
-          "single": true
+          "title": "layout",
+          "name": "layout",
+          "type": "string"
         },
         {
-          "title": "Description",
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "description",
           "name": "description",
           "type": "string"
         },
         {
-          "title": "Publishing date",
-          "name": "pubDate",
-          "type": "datetime",
-          "default": "{{now}}",
-          "isPublishDate": true
+          "title": "tags",
+          "name": "tags",
+          "type": "tags"
         },
         {
-          "title": "Content preview",
-          "name": "heroImage",
-          "type": "image",
-          "isPreviewImage": true
+          "title": "time",
+          "name": "time",
+          "type": "number"
+        },
+        {
+          "title": "featured",
+          "name": "featured",
+          "type": "boolean"
+        },
+        {
+          "title": "timestamp",
+          "name": "timestamp",
+          "type": "datetime"
+        },
+        {
+          "title": "filename",
+          "name": "filename",
+          "type": "string"
         }
       ]
     }
