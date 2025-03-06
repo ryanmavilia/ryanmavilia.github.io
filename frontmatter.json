@@ -9,6 +9,7 @@
       "path": "[[workspace]]/src/pages/blog"
     }
   ],
+  "frontMatter.taxonomy.alignFilename": true,
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
