@@ -6,7 +6,7 @@ export const articles = (
     "blog",
     (data) => {
       const shortDescription = getShortDescription(
-        data.frontmatter.description,
+        data.frontmatter.description
       );
       return {
         title: data.frontmatter.title,
@@ -17,7 +17,7 @@ export const articles = (
         timestamp: data.frontmatter.timestamp,
         filename: `/blog/${data.frontmatter.filename}`,
       };
-    },
+    }
   )
 ).sort((a, b) => {
   const dateA = new Date(a.timestamp);
@@ -30,7 +30,7 @@ export const projects = (
     "projects",
     (data) => {
       const shortDescription = getShortDescription(
-        data.frontmatter.description,
+        data.frontmatter.description
       );
       return {
         title: data.frontmatter.title,
@@ -42,7 +42,7 @@ export const projects = (
         timestamp: data.frontmatter.timestamp,
         filename: `/projects/${data.frontmatter.filename}`,
       };
-    },
+    }
   )
 ).sort((a, b) => {
   const dateA = new Date(a.timestamp);

@@ -43,12 +43,13 @@ export const featuredArticles = (
         featured: data.frontmatter.featured,
         timestamp: data.frontmatter.timestamp,
         filename: `/blog/${data.frontmatter.filename}`,
+        published: data.frontmatter.published,
       };
     }
   )
 )
   // remove the filter to show all articles
-  // .filter((project) => project.featured)
+  .filter((project) => project.featured)
   .sort((a, b) => {
     const dateA = new Date(a.timestamp);
     const dateB = new Date(b.timestamp);

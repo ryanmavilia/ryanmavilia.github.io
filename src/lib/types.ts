@@ -80,4 +80,9 @@ export type ArticleFrontmatter = {
    * (eg. https://zaggonaut.dev/blog/my-article)
    */
   filename: string;
+
+  /**
+   * Whether the article is published or not
+   */
+  published: boolean;
 };
