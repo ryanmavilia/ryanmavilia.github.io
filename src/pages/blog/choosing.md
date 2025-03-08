@@ -7,6 +7,7 @@ time: 5
 featured: true
 timestamp: 2024-03-25T00:00:00+00:00
 filename: choosing
+published: true
 ---
 
 # Choosing the Hard Path

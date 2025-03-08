@@ -16,14 +16,17 @@ export const articles = (
         featured: data.frontmatter.featured,
         timestamp: data.frontmatter.timestamp,
         filename: `/blog/${data.frontmatter.filename}`,
+        published: data.frontmatter.published,
       };
     }
   )
-).sort((a, b) => {
-  const dateA = new Date(a.timestamp);
-  const dateB = new Date(b.timestamp);
-  return dateB.getTime() - dateA.getTime();
-});
+)
+  .filter((data) => data.published)
+  .sort((a, b) => {
+    const dateA = new Date(a.timestamp);
+    const dateB = new Date(b.timestamp);
+    return dateB.getTime() - dateA.getTime();
+  });
 
 export const projects = (
   await processContentInDir<ProjectFrontmatter, ProjectFrontmatter>(

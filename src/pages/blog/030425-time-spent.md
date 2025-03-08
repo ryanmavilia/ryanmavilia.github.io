@@ -13,6 +13,7 @@ keywords:
   - life goals
   - time management
   - aspirations
+published: true
 ---
 
 # Where to spend my time(?)
