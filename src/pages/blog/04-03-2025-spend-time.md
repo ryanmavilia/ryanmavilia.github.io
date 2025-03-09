@@ -14,6 +14,8 @@ keywords:
   - time management
   - aspirations
 published: true
+date: 2025-03-04
+slug: spend-time
 ---
 
 # Where to spend my time(?)

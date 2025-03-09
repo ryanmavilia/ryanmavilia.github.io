@@ -9,6 +9,7 @@ keywords:
   - narratives
 slug: power-storytelling-everyday-life
 published: false
+date: 2025-03-06
 ---
 
 # Importance of Narrative in Life

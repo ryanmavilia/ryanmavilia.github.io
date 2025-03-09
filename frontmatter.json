@@ -6,7 +6,8 @@
   "frontMatter.content.pageFolders": [
     {
       "title": "blog",
-      "path": "[[workspace]]/src/pages/blog"
+      "path": "[[workspace]]/src/pages/blog",
+      "filePrefix": "{{date|dd-MM-yyyy}}"
     }
   ],
   "frontMatter.taxonomy.alignFilename": true,
@@ -15,8 +16,8 @@
       "name": "default",
       "pageBundle": false,
       "previewPath": "blog",
-      "filePrefix": null,
       "clearEmpty": true,
+
       "fields": [
         {
           "title": "layout",
@@ -62,11 +63,7 @@
           "title": "keywords",
           "name": "keywords",
           "type": "choice",
-          "choices": [
-            "learning",
-            "writing",
-            "narratives"
-          ]
+          "choices": ["learning", "writing", "narratives"]
         },
         {
           "title": "published",

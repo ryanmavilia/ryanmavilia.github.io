@@ -2,12 +2,17 @@
 layout: ../../layouts/BlogLayout.astro
 title: Thoughts on The Happiness Advantage
 description: A review and analysis of Shawn Achor's book on happiness and its impact on success
-tags: ["books", "productivity", "happiness"]
+tags:
+  - books
+  - productivity
+  - happiness
 time: 10
 featured: true
 timestamp: 2024-03-18T00:00:00+00:00
 filename: happiness-advantage
 published: true
+date: 2024-03-18
+slug: thoughts-happiness-advantage
 ---
 
 # Thoughts on The Happiness Advantage by Shawn Achor

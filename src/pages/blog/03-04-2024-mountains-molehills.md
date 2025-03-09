@@ -2,12 +2,16 @@
 layout: ../../layouts/BlogLayout.astro
 title: Mountains to Molehills
 description: Exploring the challenges of starting new projects and finding the right balance between planning and action
-tags: ["development", "productivity"]
+tags:
+  - development
+  - productivity
 time: 7
 featured: true
-timestamp: 2024-04-02T00:00:00+00:00
+timestamp: 2024-04-03T00:00:00+00:00
 filename: mountains
 published: true
+slug: mountains-molehills
+date: 2024-04-03
 ---
 
 # Mountains to Molehills

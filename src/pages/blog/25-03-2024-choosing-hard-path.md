@@ -2,12 +2,16 @@
 layout: ../../layouts/BlogLayout.astro
 title: Choosing the Hard Path
 description: A reflection on motivation, meaning, and making difficult choices in life
-tags: ["philosophy", "motivation"]
+tags:
+  - philosophy
+  - motivation
 time: 5
 featured: true
 timestamp: 2024-03-25T00:00:00+00:00
 filename: choosing
 published: true
+date: 2024-03-25
+slug: choosing-hard-path
 ---
 
 # Choosing the Hard Path
