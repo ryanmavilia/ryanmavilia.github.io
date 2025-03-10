@@ -17,7 +17,6 @@
       "pageBundle": false,
       "previewPath": "blog",
       "clearEmpty": true,
-
       "fields": [
         {
           "title": "layout",

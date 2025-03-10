@@ -82,6 +82,12 @@ export type ArticleFrontmatter = {
   filename: string;
 
   /**
+   * The URL slug of the article
+   * (eg. my-article)
+   */
+  slug: string;
+
+  /**
    * Whether the article is published or not
    */
   published: boolean;
