@@ -7,7 +7,7 @@
     {
       "title": "blog",
       "path": "[[workspace]]/src/pages/blog",
-      "filePrefix": "{{date|dd-MM-yyyy}}"
+      "filePrefix": "{{date|yyyy-MM-dd}}"
     }
   ],
   "frontMatter.taxonomy.alignFilename": true,
@@ -62,11 +62,7 @@
           "title": "keywords",
           "name": "keywords",
           "type": "choice",
-          "choices": [
-            "learning",
-            "writing",
-            "narratives"
-          ]
+          "choices": ["learning", "writing", "narratives"]
         },
         {
           "title": "published",

@@ -8,7 +8,6 @@ tags:
 time: 5
 featured: true
 timestamp: 2025-03-04T21:23:00-08:00
-filename: 030425-time-spent
 keywords:
   - life goals
   - time management
