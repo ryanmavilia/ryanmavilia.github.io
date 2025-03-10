@@ -10,7 +10,7 @@ featured: true
 timestamp: 2024-03-25T00:00:00+00:00
 published: true
 date: 2024-03-25
-slug: choosing-hard-path
+slug: choosing-hard-pat
 ---
 
 # Choosing the Hard Path
