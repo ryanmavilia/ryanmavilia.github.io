@@ -8,7 +8,6 @@ tags:
 time: 5
 featured: true
 timestamp: 2024-03-25T00:00:00+00:00
-filename: choosing
 published: true
 date: 2024-03-25
 slug: choosing-hard-path
