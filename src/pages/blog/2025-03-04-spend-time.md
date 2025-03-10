@@ -15,6 +15,7 @@ keywords:
 published: true
 date: 2025-03-04
 slug: spend-time
+filename: 2025-03-04-spend-time
 ---
 
 # Where to spend my time(?)

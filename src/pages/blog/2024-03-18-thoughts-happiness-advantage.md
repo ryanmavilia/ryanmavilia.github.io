@@ -12,6 +12,7 @@ timestamp: 2024-03-18T00:00:00+00:00
 published: true
 date: 2024-03-18
 slug: thoughts-happiness-advantage
+filename: 2024-03-18-thoughts-happiness-advantage
 ---
 
 # Thoughts on The Happiness Advantage by Shawn Achor
