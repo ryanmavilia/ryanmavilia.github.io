@@ -23,7 +23,7 @@ You stumble upon a blog and you're starting to skim through an article. It seems
 
 The author was born to rich parents and went to that university that everyone knows is only for the snoody elites. Not only that but now they've become a VP of that business function that you typically think is unnecessary. Wait you keep reading and oh wow... they just called themself a guru of something. This guy wouldn't know a guru if they smacked the back of the Porsche that they, presumably, drive.
 
-You know what? After reading that bio you realize just had bad that article was. It was clearly so wrong and none of the points are coming from the right place. You now assume it was written by AI anyways and this blog is just for this guy to make more money. The publish date says 2017 which is before AI but he probably faked that because that's what these people do anyways. All their accolades are basically fake.
+You know what? After reading that bio you realize just how bad that article was. It was clearly so wrong and none of the points are coming from the right place. You now assume it was written by AI anyways and this blog is just for this guy to make more money. The publish date says 2017 which is before AI but he probably faked that because that's what these people do anyways. All their accolades are basically fake.
 
 Okay at this point it's okay if you're thinking "Ryan who is this really about?" and apologies if that experience doesn't resonate with you I might've gone a bit off the deep end. In all honesty that wasn't a singular experience but I've definitely had bits and pieces of those thoughts come up before.
 
@@ -65,13 +65,13 @@ The thing what takes people from good to great to elite is being able to accept 
 
 That case study is a long winded way of saying you should let your imagination run wild. Believe in things and don't always worry about what the science says if the thing you are believing in can get you 80% of the way to your results. I assume I don't need to overexplain this like I normally do. Use your best judgement. Don't get into a strangers van because they have good candy, but if someone says that doing 100 pushups everyday for a month was what built their chest then maybe just try it.
 
-I think going all in on narrative and getting lost inthose ideas can remove a ton of need for willpower. This is great for us because willpower is not infinite and should not be treated as such.
+I think going all in on narrative and getting lost in those ideas can remove a ton of need for willpower. This is great for us because willpower is not infinite and should not be treated as such.
 
 Create your own narratives. Build your story and brand and live it to your fullest. If you want to be the funny nerd then remind yourself that you are as you practice telling jokes to friends.
 
 ## The balance of perfection and progress
 
-Okay reader I've probably started 10 different hypothetical arguments so we don't have to go down this road. But just wanted to call that out because it seems like we are min/maxxing every part of our lives these days. Everyone loves to reasearch for weeks on end before they make a purchase or start a routine. I think the internet has led to us over optimizing. We've let perfect become our best friend. For centuries people have told us that perfect is the enemy of good yet here we are forgetting that we have to get to good before we can even think about perfect. All this perfectionism and optimization leads to people burning out quicker and wondering why they are still leading what they consider to be just an "average" life.
+Okay reader I've probably started 10 different hypothetical arguments so we don't have to go down this road. But just wanted to call that out because it seems like we are min/maxxing every part of our lives these days. Everyone loves to research for weeks on end before they make a purchase or start a routine. I think the internet has led to us over optimizing. We've let perfect become our best friend. For centuries people have told us that perfect is the enemy of good yet here we are forgetting that we have to get to good before we can even think about perfect. All this perfectionism and optimization leads to people burning out quicker and wondering why they are still leading what they consider to be just an "average" life.
 
 ## Creating my story
 
@@ -85,7 +85,7 @@ The point being I wanted to have the same transformation as her. At the time I w
 
 I reminded myself that I am talkative, I can create conversations, and I know how to make people laugh. These are all things that I've been known for in the past now it was just about telling myself that I can flip the switch. In fact I can just leave it on all the time.
 
-As I continued writing this inner story for myself I continued practicing it. I would go to coffee shops and talk to my barista. When I was out I would have a conversation piece on hand like a Rubiks cube that people would ask me about. Then I started noticing things about others and complimenting them such as their glittery shoes. Day after day I would try to find ways to create more details that fit the theme of my story.
+As I continued writing this inner story for myself I continued practicing it. I would go to coffee shops and talk to the barista. When I was out I would have a conversation piece on hand like a Rubiks cube that people would ask me about. Then I started noticing things about others and complimenting them such as their glittery shoes. Day after day I would try to find ways to create more details that fit the theme of my story.
 
 With more practice it became easier and easier to believe what I had told myself. While I still have work to do I can confidently say I have achieved my original goal. I see people around my city of San Diego all the time that I know. When I'm at a coffee shop I can create a conversation with the person next to me out of thin air. And if you were curious reader I was able to even secure a few different dates without even going on Hinge!
 
@@ -101,7 +101,7 @@ Journaling is one of the defacto self improvement tools and its for good reason.
 - be a place to concretely describe what you want to become/embody
 - help in the synthesis of ideas for new ways to accomplish your goals
 
-My journal always seems to start with a few simple bullets of "what thigns happened to me today" but sometimes leads to me writing down tons of thoughts and ideas. I don't use all of them but the point is to let the thoughts out so that you can unblock anything left. To see written word that reminds you of what you are accomplishing and that your story is not just in your head.
+My journal always seems to start with a few simple bullets of "what things happened to me today" but sometimes leads to me writing down tons of thoughts and ideas. I don't use all of them but the point is to let the thoughts out so that you can unblock anything left. To see written word that reminds you of what you are accomplishing and that your story is not just in your head.
 
 Try putting a notebook or a piece of paper next to your nightstand right now. Later today when you find yourself near bed just give one minute to write something. Maybe two things. If more comes out then great. But don't sell yourself short by telling yourself you're not a journaler.
 
