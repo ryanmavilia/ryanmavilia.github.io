@@ -10,14 +10,14 @@ keywords:
 slug: power-storytelling-everyday-life
 published: true
 featured: true
-time: 10
+time: 16
 date: 2025-03-06
 filename: 2025-03-06-power-storytelling-everyday-life
 ---
 
 # The Power of Storytelling in Everyday Life
 
-## How Context Shapes Our Perceptions
+## How context shapes our perceptions
 
 You stumble upon a blog and you're starting to skim through an article. It seems okay but something about it catches you off guard. The tone feels off. The ideas seem to make some sense but you're wondering why it's reading so incorrectly to you. You start browsing the authors about page and you see some words that make you feel THINGS! Not good things either!
 
@@ -27,15 +27,15 @@ You know what? After reading that bio you realize just had bad that article was.
 
 Okay at this point it's okay if you're thinking "Ryan who is this really about?" and apologies if that experience doesn't resonate with you I might've gone a bit off the deep end. In all honesty that wasn't a singular experience but I've definitely had bits and pieces of those thoughts come up before.
 
-## The Impact of Personal Narrative
+## The impact of personal narrative
 
 The point of all that is to call out just how much the context and narrative of the things we consume affect us. Not only for what we consume but also what we produce. In fact I plan on updating my about page so people know I'm just a chill normal guy after that earlier rant.
 
 The topic is difficult to fully capture in an article but I will touch on some examples. The second part of the article will be about how we can use this to our advantage.
 
-## Case Study: Fitness and Storytelling
+## Case study: Fitness and storytelling
 
-### The Power of Marketing Narrative
+### The power of marketing narrative
 
 You are doomscrolling your favorite short form video app when suddenly you come across someone with an amazing physique. You've always wanted a physique like that but for some reason your workouts never really got you there. You've been consistent but never really saw the results. But wow look at this person. What's the name of their routine? Oh it's "The Goku Style Gunnery Firebomb Routine for Peak Physicality".
 
@@ -47,7 +47,7 @@ You start following the program for the next few months. You watch more of the c
 
 Your physique improves and while you have seen some of these changes before you never seem to stick to programs as easily as this one. You hate the workouts sometimes but you just keep thinking about how badass this program is and that keeps you pushing for more.
 
-### Beyond the Marketing
+### Beyond the marketing
 
 Okay so let's stop the made up story there for a second. Class do you see what the issue is? If your thought is "Yeah this made up person got in shape but only because he fell for the BS marketing of the influencer! If he had followed scientifically proven routines he would've gotten to the same place. Now he's wasted $10 for something he could've done himself for free."
 
@@ -61,7 +61,7 @@ _Side note: it sure is easy to sound smart when you set up the arguments yoursel
 
 The thing what takes people from good to great to elite is being able to accept the boredom. Being able to follow without caring about a story and just doing. I agree with you! But I think you can see that this is for getting to good when things are bad. We can worry about staying diligent and foregoing motivation when we get to good. But for now we just need a reason to get off the couch and go for a run because willpower just isn't doing it.
 
-### Embrace the Useful Narratives
+### Embrace the useful narratives
 
 That case study is a long winded way of saying you should let your imagination run wild. Believe in things and don't always worry about what the science says if the thing you are believing in can get you 80% of the way to your results. I assume I don't need to overexplain this like I normally do. Use your best judgement. Don't get into a strangers van because they have good candy, but if someone says that doing 100 pushups everyday for a month was what built their chest then maybe just try it.
 
@@ -69,11 +69,11 @@ I think going all in on narrative and getting lost inthose ideas can remove a to
 
 Create your own narratives. Build your story and brand and live it to your fullest. If you want to be the funny nerd then remind yourself that you are as you practice telling jokes to friends.
 
-## The Balance of Perfection and Progress
+## The balance of perfection and progress
 
 Okay reader I've probably started 10 different hypothetical arguments so we don't have to go down this road. But just wanted to call that out because it seems like we are min/maxxing every part of our lives these days. Everyone loves to reasearch for weeks on end before they make a purchase or start a routine. I think the internet has led to us over optimizing. We've let perfect become our best friend. For centuries people have told us that perfect is the enemy of good yet here we are forgetting that we have to get to good before we can even think about perfect. All this perfectionism and optimization leads to people burning out quicker and wondering why they are still leading what they consider to be just an "average" life.
 
-## Creating My Story
+## Creating my story
 
 Personally I always wanted to be really social. I've always had friends but never really got around to the part where I knew how to flip the switch with strangers. Not only that but I wanted to keep a large network of friends and acquaintances. Many just want close friends but I already had my best friends. What I was seeking was a level of socialization where I could be at a random coffee shop in town and bump into someone that I knew or worst case make a new friend with the person sitting at the table next to me. Not everyone's dream but it was mine.
 
@@ -91,9 +91,9 @@ With more practice it became easier and easier to believe what I had told myself
 
 I don't want to make it seem like narrative was all I needed to get to that point. It took a lot of failures and straight up will power. But what I will say is now that the story is writing itself instead of me making it up it seems to be able to continue without me intervening. When I'm out I just talk to people. It just happens because that's who I am now and it's effortless.
 
-## Tools for Using Narrative
+## Tools for using narrative
 
-### Practice Journaling
+### Practice journaling
 
 Journaling is one of the defacto self improvement tools and its for good reason. It is a way to explore who you are and who you want to become. In regards to the story you are creating for yourself it can:
 
