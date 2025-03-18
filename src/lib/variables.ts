@@ -9,6 +9,7 @@ export const GLOBAL = {
     "I'm a software engineer and web developer. I write about web development, tech trends, and the occasional programming mishap.",
 
   // Social media links
+  email: "contact@ryanmavilia.com",
   githubProfile: "https://github.com/ryanmavilia",
   // twitterProfile: "https://twitter.com/",
 
