@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/BlogLayout.astro
 title: Thirty Personal Goals Before Thirty
-description: A reflection on personal goals and aspirations to accomplish before turning thirty
-time: 5
+description: Explore thirty personal goals to achieve before turning thirty, from travel adventures to self-improvement milestones.
+time: 2
 featured: true
 timestamp: 2025-03-20T15:28:19.586Z
 published: true
@@ -70,3 +70,5 @@ Well I guess it's time to reflect on my life and see what I've accomplished so f
 28. Try one new restaurant a month, and one new recipe for every three restaurants
 29. Automate and utilize my home server for media and backups.
 30. Make one new friend
+
+Should be doable but will still take effort and planning. Looking forward to crossing off some of these. If people are interested I may make a post explaining some of these. Contact info is at the bottom of the site. Let me know if this helps inspire your list!
