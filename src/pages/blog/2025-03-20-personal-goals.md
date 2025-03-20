@@ -15,6 +15,12 @@ tags:
   - motivation
   - personal development
   - productivity
+keywords:
+  - self-improvement
+  - adventure
+  - bucket list
+  - personal growth
+  - inspiration
 ---
 
 # Thirty Before Thirty
