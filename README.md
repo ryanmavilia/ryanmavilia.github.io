@@ -1,82 +1,51 @@
-![Zaggonaut, a retro-inspired theme for Astro.](./images/README.png)
+# Ryan Mavilia's Blog
 
-Zaggonaut is a retro-inspired theme for Astro, built using TypeScript, TailwindCSS, and of course, Astro.
+Welcome to my personal blog where I write about software engineering, personal development, and life experiences. I share insights about technology, productivity, and personal growth through practical examples and thoughtful analysis.
 
-## Getting Started
+## What You'll Find Here
 
-[View the demo](https://zaggonaut.dev) or [view the source code](https://github.com/RATIU5/zaggonaut).
+### Software Engineering
 
-Alternatively, you can create a new Astro project with Zaggonaut like this:
+- Practical frameworks for modern development challenges
+- Insights about AI and software development
+- Code verification and testing strategies
+- Development productivity tips
 
-```bash
-# yarn
-yarn create astro@latest -- --template RATIU5/zaggonaut
+### Personal Development
 
-# pnpm
-pnpm create astro@latest --template RATIU5/zaggonaut
+- Goal setting and achievement strategies
+- Life lessons and personal growth experiences
+- Productivity techniques and habits
+- Reflections on happiness and success
 
-# yarn
-yarn create astro --template RATIU5/zaggonaut
+### Life Experiences
 
-# bun
-bun create astro@latest -- --template RATIU5/zaggonaut
-```
+- Travel adventures and exploration
+- Personal projects and achievements
+- Photography and creative pursuits
+- Life milestones and reflections
 
-## Features
+## Recent Posts
 
-- Dark & light mode
-- Customizable colors
-- 100 / 100 Lighthouse score
-- Fully accessible
-- Fully responsive
-- Type-safe
-- SEO-friendly
+- [The LLM Matrix for Software Engineers](/blog/llm-matrix-software-engineers) - A practical framework for deciding when to use AI assistance in your code
+- [Thirty Personal Goals Before Thirty](/blog/personal-goals) - A journey of self-improvement and life milestones
+- [The Power of Storytelling in Everyday Life](/blog/power-storytelling-everyday-life) - How narratives shape our experiences
 
-## Customization
+## About Me
 
-The entire theme is fully customizable. The theme is setup a specific way to make it easy to customize.
+I'm a software engineer passionate about technology, personal growth, and sharing knowledge. This blog serves as a platform to document my journey, share insights, and connect with others who share similar interests.
 
-### Colors
+## Get in Touch
 
-You can customize the colors of the theme by editing the `src/styles/global.css` file.
-This file uses Tailwind CSS and CSS variables to customize the colors of the theme.
-Zaggonaut uses the following CSS variables:
+Feel free to reach out with questions, suggestions, or just to say hello. You can find my contact information at the bottom of the site.
 
-- `--color-zag-dark`: The dark color of the theme
-- `--color-zag-light`: The light color of the theme
-- `--color-zag-dark-muted`: The dark color of the theme with a slight opacity
-- `--color-zag-light-muted`: The light color of the theme with a slight opacity
-- `--color-zag-accent-light`: The light accent color of the theme
-- `--color-zag-accent-light-muted`: The light accent color of the theme with a slight opacity
-- `--color-zag-accent-dark`: The dark accent color of the theme
-- `--color-zag-accent-dark-muted`: The dark accent color of the theme with a slight opacity
+## Technical Details
 
-### Text
+This blog is built with Astro and MDX. The source code is available on GitHub for those interested in the technical implementation.
 
-You can customize the text of the theme by editing the `src/lib/variables.ts` file.
-This file contains all of the text used throughout the theme.
+## Licensing
 
-For example, you can change the `username` variable to your own username and everywhere the username is used will be replaced with your username.
+This project uses a dual-license approach:
 
-```typescript
-export const GLOBAL = {
-  // Site metadata
-  username: "zaggonaut-fan123",
-
-  // ...
-
-  // Profile image
-  profileImage: "profile.webp",
-
-  // Menu items
-  menu: {
-    home: "/",
-    projects: "/projects",
-    blog: "/blog",
-  },
-};
-```
-
-## Ready To Try?
-
-Check out [the theme website](https://zaggonaut.dev) to give it a spin!
+- The website's technical implementation (Astro configuration, components, styles, etc.) is available under the MIT License
+- The blog content (posts, images, etc.) is protected by copyright law. Please see the [LICENSE](LICENSE) file for details about usage rights and permissions.
