@@ -22,33 +22,34 @@ export const processContentInDir = async <T extends object, K>(
   processFn: (data: MarkdownData<T>) => K,
   dir: string = process.cwd()
 ) => {
-  const files = await fs.readdir(dir + `/src/pages/${contentType}`);
+  const files = await fs.readdir(`${dir}/src/pages/${contentType}`);
   const markdownFiles = files
-    .filter((file: string) => file.endsWith(".md"))
+    .filter((file: string) => file.endsWith(".md") || file.endsWith(".mdx"))
     .map((file) => file.split(".")[0]);
+
+  // Use separate static glob patterns for each content type
+  const contentGlob =
+    contentType === "projects"
+      ? import.meta.glob("/src/pages/projects/*.{md,mdx}")
+      : import.meta.glob("/src/pages/blog/*.{md,mdx}");
+
   const readMdFileContent = async (file: string) => {
-    if (contentType === "projects") {
-      const content = import.meta
-        .glob(`/src/pages/projects/*.md`)
-        [`/src/pages/projects/${file}.md`]();
-      const data = (await content) as {
-        frontmatter: T;
-        file: string;
-        url: string;
-      };
-      return processFn(data);
-    } else {
-      const content = import.meta
-        .glob(`/src/pages/blog/*.md`)
-        [`/src/pages/blog/${file}.md`]();
-      const data = (await content) as {
-        frontmatter: T;
-        file: string;
-        url: string;
-      };
-      return processFn(data);
+    const content =
+      contentGlob[`/src/pages/${contentType}/${file}.md`] ||
+      contentGlob[`/src/pages/${contentType}/${file}.mdx`];
+
+    if (!content) {
+      throw new Error(`File not found: ${file}`);
     }
+
+    const data = (await content()) as {
+      frontmatter: T;
+      file: string;
+      url: string;
+    };
+    return processFn(data);
   };
+
   return await Promise.all(markdownFiles.map(readMdFileContent));
 };
 

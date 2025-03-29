@@ -25,3 +25,8 @@ pnpm-debug.log*
 
 # vs code
 .vscode/
+
+# Cursor IDE files
+.cursor/
+.cursorrule
+*.mdc
