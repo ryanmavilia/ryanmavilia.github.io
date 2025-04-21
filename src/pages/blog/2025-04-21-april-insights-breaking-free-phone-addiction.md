@@ -101,4 +101,6 @@ Keeping in line with this post I stumbled across this video and plan on implemen
 - Traveled San Francisco and had San Tung dry fried chicken wings. 11/10 would recommend.
 - I started reusing Obsidian and paper notes. Still trying to figure out what tooling goes where but realized I would learn that faster by doing more for now and then optimizing later.
 
+I also released a new photography app that I made with Cursor. It's on my Github and while I did publish it to a website it's not fully production ready.
+
 Overall a pretty fun month and I'm most proud of myself for really pushing through on using things that make my phone less addicting. I think that's going to have big payoffs moving forward. Hope to have more next month! :)
