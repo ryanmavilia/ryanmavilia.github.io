@@ -28,10 +28,7 @@ export const processContentInDir = async <T extends object, K>(
     .map((file) => file.split(".")[0]);
 
   // Use separate static glob patterns for each content type
-  const contentGlob =
-    contentType === "projects"
-      ? import.meta.glob("/src/pages/projects/*.{md,mdx}")
-      : import.meta.glob("/src/pages/blog/*.{md,mdx}");
+  const contentGlob = import.meta.glob("/src/pages/blog/*.{md,mdx}");
 
   const readMdFileContent = async (file: string) => {
     const content =
