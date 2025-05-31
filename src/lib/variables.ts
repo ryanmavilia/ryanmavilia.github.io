@@ -8,6 +8,8 @@ export const GLOBAL = {
   longDescription:
     "I'm a software engineer and web developer. I write about web development, tech trends, and the occasional programming mishap.",
 
+  rss: "/rss.xml",
+
   // Social media links
   email: "contact@ryanmavilia.com",
   githubProfile: "https://github.com/ryanmavilia",
