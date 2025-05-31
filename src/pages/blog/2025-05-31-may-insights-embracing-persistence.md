@@ -29,7 +29,7 @@ Like clockwork it's the end of the month and I haven't written a blog post yet. 
 
 ## Fighting the phone addiction
 
-I'm still using the tools from my last post. But now I am amplifying my usage of things:
+I'm still using the tools from my [last post](/blog/2025-04-21-april-insights-breaking-free-phone-addiction). But now I am amplifying my usage of things:
 
 ### Facebook
 
