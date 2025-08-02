@@ -7,7 +7,8 @@
     {
       "title": "blog",
       "path": "[[workspace]]/src/pages/blog",
-      "filePrefix": "{{date|yyyy-MM-dd}}"
+      "filePrefix": "{{date|yyyy-MM-dd}}",
+      "contentTypes": ["default"]
     }
   ],
   "frontMatter.taxonomy.alignFilename": true,
@@ -17,64 +18,42 @@
       "pageBundle": false,
       "previewPath": "blog",
       "clearEmpty": true,
+      "template": "[[workspace]]/.frontmatter/templates/blog-post.md",
       "fields": [
-        {
-          "title": "layout",
-          "name": "layout",
-          "type": "string"
-        },
         {
           "title": "title",
           "name": "title",
-          "type": "string"
+          "type": "string",
+          "required": true
         },
         {
           "title": "description",
           "name": "description",
-          "type": "string"
+          "type": "string",
+          "required": true
         },
         {
           "title": "tags",
           "name": "tags",
-          "type": "tags"
-        },
-        {
-          "title": "time",
-          "name": "time",
-          "type": "number"
+          "type": "tags",
+          "default": []
         },
         {
           "title": "featured",
           "name": "featured",
-          "type": "boolean"
-        },
-        {
-          "title": "timestamp",
-          "name": "timestamp",
-          "type": "datetime"
-        },
-        {
-          "title": "filename",
-          "name": "filename",
-          "type": "string"
-        },
-        {
-          "title": "keywords",
-          "name": "keywords",
-          "type": "tags"
+          "type": "boolean",
+          "default": false
         },
         {
           "title": "published",
           "name": "published",
-          "type": "boolean"
-        },
-        {
-          "title": "date",
-          "name": "date",
-          "type": "datetime"
+          "type": "boolean",
+          "default": true
         }
       ]
     }
   ],
-  "frontMatter.git.enabled": true
+  "frontMatter.git.enabled": true,
+  "frontMatter.content.autoCreateSlug": true,
+  "frontMatter.content.defaultSorting": "LastModified"
 }

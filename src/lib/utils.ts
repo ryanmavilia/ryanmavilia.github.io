@@ -89,3 +89,54 @@ export const generateSourceUrl = (
 ) => {
   return `${GLOBAL.rootUrl}/${contentType}/${sourceUrl}`;
 };
+
+/**
+ * Generates a URL-friendly slug from a title
+ * @param title the title to slugify
+ * @returns a URL-friendly slug
+ */
+export const generateSlug = (title: string): string => {
+  return title
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '') // Remove special characters
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/-+/g, '-') // Replace multiple hyphens with single
+    .trim();
+};
+
+/**
+ * Extracts date from filename and generates ISO timestamp
+ * @param filename the filename (e.g., "2025-06-09-my-post")
+ * @returns ISO timestamp string
+ */
+export const generateTimestampFromFilename = (filename: string): string => {
+  const dateMatch = filename.match(/^(\d{4}-\d{2}-\d{2})/);
+  if (dateMatch) {
+    const date = new Date(dateMatch[1]);
+    return date.toISOString();
+  }
+  // Fallback to current date if no date in filename
+  return new Date().toISOString();
+};
+
+/**
+ * Estimates reading time based on content length
+ * @param content the markdown content
+ * @returns estimated reading time in minutes
+ */
+export const estimateReadingTime = (content: string): number => {
+  const wordsPerMinute = 200;
+  const words = content.trim().split(/\s+/).length;
+  const minutes = Math.ceil(words / wordsPerMinute);
+  return Math.max(1, minutes); // Minimum 1 minute
+};
+
+/**
+ * Generates filename from current file path
+ * @param filepath the current file path
+ * @returns filename without extension
+ */
+export const extractFilename = (filepath: string): string => {
+  const filename = filepath.split('/').pop() || '';
+  return filename.replace(/\.(md|mdx)$/, '');
+};

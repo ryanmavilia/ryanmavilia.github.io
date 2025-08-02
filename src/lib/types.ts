@@ -50,7 +50,7 @@ export type ArticleFrontmatter = {
   title: string;
 
   /**
-   * THe summary description of the article
+   * The summary description of the article
    */
   description: string;
 
@@ -62,33 +62,55 @@ export type ArticleFrontmatter = {
 
   /**
    * The estimated time to read the article in minutes
+   * (auto-generated if not provided)
    */
-  time: number;
+  time?: number;
 
   /**
    * Whether the article should be featured on the homepage
+   * (defaults to false)
    */
-  featured: boolean;
+  featured?: boolean;
 
   /**
    * The timestamp the article was published in W3C format
+   * (auto-generated from filename date if not provided)
    */
-  timestamp: string;
+  timestamp?: string;
+
+  /**
+   * The date the article was published in W3C format
+   * (auto-generated from filename date if not provided)
+   */
+  date?: string;
 
   /**
    * The URL of the article on the website
-   * (eg. https://zaggonaut.dev/blog/my-article)
+   * (auto-generated from filename if not provided)
    */
-  filename: string;
+  filename?: string;
 
   /**
    * The URL slug of the article
-   * (eg. my-article)
+   * (auto-generated from title if not provided)
    */
-  slug: string;
+  slug?: string;
+
+  /**
+   * SEO keywords for the article
+   * (auto-generated from tags if not provided)
+   */
+  keywords?: string[];
 
   /**
    * Whether the article is published or not
+   * (defaults to true)
    */
-  published: boolean;
+  published?: boolean;
+
+  /**
+   * Layout file path
+   * (defaults to BlogLayout.astro)
+   */
+  layout?: string;
 };

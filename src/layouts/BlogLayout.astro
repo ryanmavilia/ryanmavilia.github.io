@@ -5,6 +5,10 @@ import {
   getShortDescription,
   processArticleDate,
   generateSourceUrl,
+  generateSlug,
+  generateTimestampFromFilename,
+  estimateReadingTime,
+  extractFilename
 } from "../lib/utils";
 import { GLOBAL } from "../lib/variables";
 import type { MarkdownLayoutProps } from "astro";
@@ -13,11 +17,22 @@ import Layout from "./Layout.astro";
 
 type Props = MarkdownLayoutProps<ArticleFrontmatter>;
 
-const { frontmatter } = Astro.props;
+const { frontmatter, rawContent, file } = Astro.props;
+
+// Auto-generate missing fields with intelligent defaults
+const filename = frontmatter.filename || extractFilename(file);
+const slug = frontmatter.slug || generateSlug(frontmatter.title);
+const timestamp = frontmatter.timestamp || frontmatter.date || generateTimestampFromFilename(filename);
+const time = frontmatter.time || estimateReadingTime(rawContent());
+const featured = frontmatter.featured || false;
+const published = frontmatter.published !== false; // Default to true unless explicitly false
+const keywords = frontmatter.keywords || frontmatter.tags || [];
+
+// Derived values
 const shortDescription = getShortDescription(frontmatter.description);
-const articleDate = processArticleDate(frontmatter.timestamp);
-const sourceUrl = generateSourceUrl(frontmatter.filename, "blog");
-const isPublished = frontmatter.published;
+const articleDate = processArticleDate(timestamp);
+const sourceUrl = generateSourceUrl(filename, "blog");
+const isPublished = published;
 ---
 
 {
@@ -75,7 +90,7 @@ const isPublished = frontmatter.published;
           </h1>
           <div class="flex justify-between">
             <span>{articleDate}</span>
-            <span>{frontmatter.time} min</span>
+            <span>{time} min</span>
           </div>
         </div>
         <Prose>
