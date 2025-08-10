@@ -2,7 +2,7 @@
 title: "{{title}}"
 description: "{{description}}"
 tags: []
-featured: false
+featured: true
 published: true
 ---
 

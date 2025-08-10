@@ -28,7 +28,9 @@ export const processContentInDir = async <T extends object, K>(
     .map((file) => file.split(".")[0]);
 
   // Use separate static glob patterns for each content type
-  const contentGlob = import.meta.glob("/src/pages/blog/*.{md,mdx}");
+  const contentGlob = contentType === "blog" 
+    ? import.meta.glob("/src/pages/blog/*.{md,mdx}")
+    : import.meta.glob("/src/pages/projects/*.{md,mdx}");
 
   const readMdFileContent = async (file: string) => {
     const content =
@@ -39,11 +41,23 @@ export const processContentInDir = async <T extends object, K>(
       throw new Error(`File not found: ${file}`);
     }
 
-    const data = (await content()) as {
+    const rawData = (await content()) as {
       frontmatter: T;
       file: string;
       url: string;
     };
+
+    // Auto-generate missing fields for blog articles
+    const data = contentType === "blog" 
+      ? {
+          ...rawData,
+          frontmatter: autoGenerateArticleFields(
+            rawData.frontmatter,
+            rawData.file
+          )
+        }
+      : rawData;
+
     return processFn(data);
   };
 
@@ -139,4 +153,39 @@ export const estimateReadingTime = (content: string): number => {
 export const extractFilename = (filepath: string): string => {
   const filename = filepath.split('/').pop() || '';
   return filename.replace(/\.(md|mdx)$/, '');
+};
+
+/**
+ * Auto-generates missing fields for article frontmatter
+ * @param frontmatter the article frontmatter
+ * @param file the file path
+ * @param rawContent function to get the raw markdown content (optional)
+ * @returns frontmatter with auto-generated fields
+ */
+export const autoGenerateArticleFields = <T extends Record<string, any>>(
+  frontmatter: T,
+  file: string,
+  rawContent?: () => string
+): T => {
+  const filename = frontmatter.filename || extractFilename(file);
+  const slug = frontmatter.slug || generateSlug(frontmatter.title);
+  const timestamp = frontmatter.timestamp || frontmatter.date || generateTimestampFromFilename(filename);
+  
+  // Only estimate reading time if rawContent is available, otherwise default to 5 minutes
+  const time = frontmatter.time || (rawContent ? estimateReadingTime(rawContent()) : 5);
+  
+  const featured = frontmatter.featured || false;
+  const published = frontmatter.published !== false; // Default to true unless explicitly false
+  const keywords = frontmatter.keywords || frontmatter.tags || [];
+
+  return {
+    ...frontmatter,
+    filename,
+    slug,
+    timestamp,
+    time,
+    featured,
+    published,
+    keywords,
+  };
 };
