@@ -4,6 +4,7 @@ description: "{{description}}"
 tags: []
 featured: true
 published: true
+layout: ../../layouts/BlogLayout.astro
 ---
 
 # {{title}}

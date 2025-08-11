@@ -1,5 +1,5 @@
 ---
-title: "Random Prompt Saturday: The Last Photo I Took"
+title: "{{title}}"
 tags: []
 featured: true
 published: true
