@@ -1,5 +1,5 @@
 ---
-title: "{{title}}"
+title: "Random Prompt Saturday: The Last Photo I Took"
 tags: []
 featured: true
 published: true
@@ -7,7 +7,7 @@ description: The start of writing based on a random prompt this week we talk abo
 layout: ../../layouts/BlogLayout.astro
 ---
 
-# Random Prompt Saturday: The Last Photo I Took
+# {{title}}
 
 This is the first post in a new series where I write based on a random prompt. This week's prompt is write about the last photo you took.
 
