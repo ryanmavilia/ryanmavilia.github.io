@@ -13,7 +13,7 @@ Second time in my career that I've been laid off. So far? Not so bad!
 
 ## What's different this time
 
-1. I don't have a lease over my head because I was about to do a temporary move to my dad's house.
+1. I don't have a lease over my head because I was about to move home.
 2. My savings are larger and I'm farther on my FIRE path.
 3. People are showing support and I'm more open and honest about what I need from them.
 
