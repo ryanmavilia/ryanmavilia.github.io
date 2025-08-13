@@ -3,7 +3,7 @@ title: "Random Prompt Saturday: The Last Photo I Took"
 tags: []
 featured: true
 published: true
-description: The start of writing based on a random prompt this week we talk about the last photo I took.
+description: The start of writing based on a random prompt this week we talk about raw beef.
 layout: ../../layouts/BlogLayout.astro
 ---
 

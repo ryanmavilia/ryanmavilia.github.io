@@ -1,13 +1,13 @@
 ---
-title: "Unemployment Week 0 - What's different this time?"
-description: "First week back on the job market and how I am approaching it."
+title: "Unemployment week[0]"
+description: "First week without a job and how I am feeling about it."
 tags: []
 featured: true
 published: true
 layout: ../../layouts/BlogLayout.astro
 ---
 
-# {{title}}
+# Unemployment v2 Week 0
 
 Second time in my career that I've been laid off. So far? Not so bad!
 
