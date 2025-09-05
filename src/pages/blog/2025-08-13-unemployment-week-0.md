@@ -1,6 +1,6 @@
 ---
-title: "Unemployment week[0]"
-description: "First week without a job and how I'm feeling about it."
+title: Unemployment week[0]
+description: "{{description}}"
 tags: []
 featured: true
 published: true
