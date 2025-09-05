@@ -28,9 +28,10 @@ export const processContentInDir = async <T extends object, K>(
     .map((file) => file.split(".")[0]);
 
   // Use separate static glob patterns for each content type
-  const contentGlob = contentType === "blog" 
-    ? import.meta.glob("/src/pages/blog/*.{md,mdx}")
-    : import.meta.glob("/src/pages/projects/*.{md,mdx}");
+  const contentGlob =
+    contentType === "blog"
+      ? import.meta.glob("/src/pages/blog/*.{md,mdx}")
+      : import.meta.glob("/src/pages/projects/*.{md,mdx}");
 
   const readMdFileContent = async (file: string) => {
     const content =
@@ -45,18 +46,21 @@ export const processContentInDir = async <T extends object, K>(
       frontmatter: T;
       file: string;
       url: string;
+      rawContent?: () => string;
     };
 
     // Auto-generate missing fields for blog articles
-    const data = contentType === "blog" 
-      ? {
-          ...rawData,
-          frontmatter: autoGenerateArticleFields(
-            rawData.frontmatter,
-            rawData.file
-          )
-        }
-      : rawData;
+    const data =
+      contentType === "blog"
+        ? {
+            ...rawData,
+            frontmatter: autoGenerateArticleFields(
+              rawData.frontmatter,
+              rawData.file,
+              rawData.rawContent
+            ),
+          }
+        : rawData;
 
     return processFn(data);
   };
@@ -85,7 +89,10 @@ export const getShortDescription = (content: string, maxLength = 20) => {
  */
 export const processArticleDate = (timestamp: string) => {
   const date = new Date(timestamp);
-  const monthSmall = date.toLocaleString("default", { month: "short", timeZone: "UTC" });
+  const monthSmall = date.toLocaleString("default", {
+    month: "short",
+    timeZone: "UTC",
+  });
   const day = date.getUTCDate();
   const year = date.getUTCFullYear();
   return `${monthSmall} ${day}, ${year}`;
@@ -112,9 +119,9 @@ export const generateSourceUrl = (
 export const generateSlug = (title: string): string => {
   return title
     .toLowerCase()
-    .replace(/[^\w\s-]/g, '') // Remove special characters
-    .replace(/\s+/g, '-') // Replace spaces with hyphens
-    .replace(/-+/g, '-') // Replace multiple hyphens with single
+    .replace(/[^\w\s-]/g, "") // Remove special characters
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/-+/g, "-") // Replace multiple hyphens with single
     .trim();
 };
 
@@ -151,8 +158,8 @@ export const estimateReadingTime = (content: string): number => {
  * @returns filename without extension
  */
 export const extractFilename = (filepath: string): string => {
-  const filename = filepath.split('/').pop() || '';
-  return filename.replace(/\.(md|mdx)$/, '');
+  const filename = filepath.split("/").pop() || "";
+  return filename.replace(/\.(md|mdx)$/, "");
 };
 
 /**
@@ -169,11 +176,15 @@ export const autoGenerateArticleFields = <T extends Record<string, any>>(
 ): T => {
   const filename = frontmatter.filename || extractFilename(file);
   const slug = frontmatter.slug || generateSlug(frontmatter.title);
-  const timestamp = frontmatter.timestamp || frontmatter.date || generateTimestampFromFilename(filename);
-  
+  const timestamp =
+    frontmatter.timestamp ||
+    frontmatter.date ||
+    generateTimestampFromFilename(filename);
+
   // Only estimate reading time if rawContent is available, otherwise default to 5 minutes
-  const time = frontmatter.time || (rawContent ? estimateReadingTime(rawContent()) : 5);
-  
+  const time =
+    frontmatter.time || (rawContent ? estimateReadingTime(rawContent()) : 5);
+
   const featured = frontmatter.featured || false;
   const published = frontmatter.published !== false; // Default to true unless explicitly false
   const keywords = frontmatter.keywords || frontmatter.tags || [];
