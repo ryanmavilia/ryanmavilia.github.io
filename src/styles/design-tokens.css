@@ -1,0 +1,30 @@
+:root {
+  /* Base colors */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-grid: #E5E5E5;
+
+  /* Sage green system */
+  --color-sage: #87A878;
+  --color-sage-dark: #6B8A5F;
+  --color-sage-light: #A8C99E;
+  --color-sage-bg: rgba(135, 168, 120, 0.1);
+
+  /* Typography scale - brutalist extremes */
+  --text-xs: 10px;
+  --text-sm: 12px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 42px;
+  --text-4xl: 48px;
+  --text-5xl: 72px;
+  --text-6xl: 96px;
+  --text-7xl: 120px;
+
+  /* Spacing */
+  --border-thin: 2px;
+  --border-thick: 4px;
+  --border-extra: 8px;
+}

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@import './design-tokens.css';
 
 @variant dark (&:where(.dark, .dark *));
 
@@ -41,6 +42,35 @@
   --color-zag-accent-light-muted: var(--color-emerald-300);
   --color-zag-accent-dark: var(--color-emerald-600);
   --color-zag-accent-dark-muted: var(--color-emerald-800);
+
+  /* Brutalist color system */
+  --color-sage: #87A878;
+  --color-sage-dark: #6B8A5F;
+  --color-sage-light: #A8C99E;
+  --color-sage-bg: rgba(135, 168, 120, 0.1);
+
+  /* Brutalist typography scale */
+  --font-size-xs: 10px;
+  --font-size-sm: 12px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 42px;
+  --font-size-4xl: 48px;
+  --font-size-5xl: 72px;
+  --font-size-6xl: 96px;
+  --font-size-7xl: 120px;
+
+  /* Brutalist borders */
+  --border-width-brutal: 4px;
+  --border-width-brutal-thin: 2px;
+  --border-width-brutal-thick: 8px;
+
+  /* Line heights */
+  --line-height-tight: 0.9;
+  --line-height-relaxed: 1.7;
+  --line-height-loose: 1.8;
 }
 
 @layer base {
@@ -49,6 +79,48 @@
     --zag-offset: 6px;
     --zag-transition-duration: 0.15s;
     --zag-transition-timing-function: ease-in-out;
+  }
+
+  /* Brutalist base styles */
+  body {
+    background: var(--color-white);
+    color: var(--color-black);
+    font-family: 'IBM Plex Mono', monospace;
+    line-height: 1.7;
+  }
+
+  /* Brutalist border utilities */
+  .border-brutal {
+    border: var(--border-thick) solid var(--color-black);
+  }
+
+  .border-brutal-thin {
+    border: var(--border-thin) solid var(--color-black);
+  }
+
+  .border-brutal-sage {
+    border: var(--border-thick) solid var(--color-sage);
+  }
+
+  /* Rotated label utility */
+  .label-rotated {
+    font-size: var(--text-xs);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Grid overlay for construction aesthetic */
+  .grid-overlay {
+    background-image:
+      repeating-linear-gradient(0deg, var(--color-grid), var(--color-grid) 1px, transparent 1px, transparent 80px),
+      repeating-linear-gradient(90deg, var(--color-grid), var(--color-grid) 1px, transparent 1px, transparent 80px);
+  }
+
+  /* No shadows allowed - pure flat design */
+  * {
+    box-shadow: none !important;
   }
 
   .zag-transition {
@@ -75,7 +147,7 @@
       background-color: var(--color-zag-light);
     }
   }
-  
+
   .zag-text {
     color: var(--color-zag-dark);
     :where(.dark, .dark *) & {
