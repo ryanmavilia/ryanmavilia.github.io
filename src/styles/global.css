@@ -110,9 +110,14 @@
     box-shadow: none !important;
   }
 
-  /* Smooth transitions for interactive elements */
+  /* Smooth transitions for interactive elements - only color/background/border (avoid layout/paint) */
   a, button {
-    transition: all 0.2s ease;
+    transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+  }
+
+  /* Helper to hint the browser to promote transforms to the compositor for smoother motion */
+  .will-change-transform {
+    will-change: transform;
   }
 
   .opsz {

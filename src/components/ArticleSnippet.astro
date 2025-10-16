@@ -7,10 +7,17 @@ interface Props {
   duration: string;
   url: string;
   timestamp: Date;
-  variant?: 'featured' | 'default';
+  variant?: "featured" | "default";
 }
 
-const { title, description, duration, url, timestamp, variant = 'default' } = Astro.props;
+const {
+  title,
+  description,
+  duration,
+  url,
+  timestamp,
+  variant = "default",
+} = Astro.props;
 const formattedDate = processArticleDate(timestamp.toString());
 
 // Random slight rotation for dates (-3 to 3 degrees)
@@ -20,10 +27,11 @@ const rotation = Math.floor(Math.random() * 7) - 3;
 <a
   href={url}
   class={`
-    block group relative overflow-hidden transition-all duration-150
-    ${variant === 'featured'
-      ? 'bg-sage text-white border-brutal p-8 hover:bg-sage-dark'
-      : 'bg-white border-brutal-thin p-6 hover:border-brutal hover:border-sage'
+    block group relative overflow-hidden transition-colors duration-150
+    ${
+      variant === "featured"
+        ? "bg-sage text-white border-brutal p-8 hover:bg-sage-dark"
+        : "bg-white border-brutal p-6 hover:border-sage"
     }
   `}
 >
@@ -36,29 +44,38 @@ const rotation = Math.floor(Math.random() * 7) - 3;
   </span>
 
   <!-- Title -->
-  <h3 class={`
+  <h3
+    class={`
     font-bold mb-3 pr-16
-    ${variant === 'featured' ? 'text-3xl md:text-4xl' : 'text-2xl md:text-3xl'}
-  `}>
+    ${variant === "featured" ? "text-3xl md:text-4xl" : "text-2xl md:text-3xl"}
+  `}
+  >
     {title}
   </h3>
 
   <!-- Description -->
-  <p class={`
+  <p
+    class={`
     mb-4 leading-relaxed
-    ${variant === 'featured' ? 'text-lg opacity-90' : 'text-base opacity-70'}
-  `}>
+    ${variant === "featured" ? "text-lg opacity-90" : "text-base opacity-70"}
+  `}
+  >
     {description}
   </p>
 
   <!-- Reading time badge -->
   <div class="flex items-center gap-2">
-    <span class={`
+    <span
+      class={`
       text-xs uppercase tracking-wider font-bold px-3 py-1 border-brutal-thin
-      ${variant === 'featured' ? 'bg-white text-black' : 'bg-black text-white'}
-    `}>
+      ${variant === "featured" ? "bg-white text-black" : "bg-black text-white"}
+    `}
+    >
       {duration}
     </span>
-    <span class="text-sm group-hover:translate-x-1 transition-transform duration-150">→</span>
+    <span
+      class="text-sm group-hover:translate-x-1 transition-transform duration-150 will-change-transform"
+      >→</span
+    >
   </div>
 </a>
