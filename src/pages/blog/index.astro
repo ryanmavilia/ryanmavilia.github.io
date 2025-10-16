@@ -34,26 +34,42 @@ import { articles } from "../../lib/list";
     <meta name="language" content="English" />
     <link rel="canonical" href={`${GLOBAL.rootUrl}/blog`} />
   </Fragment>
-  <Section class="my-8">
-    <div class="flex items-center gap-4 pt-8 pb-16">
-      <h1 class="font-display text-3xl sm:text-4xl leading-loose">
-        {GLOBAL.articlesName}
-      </h1>
-    </div>
-    <ul>
-      {
-        articles.map((project) => (
-          <li>
-            <ArticleSnippet
-              title={project.title}
-              description={project.description}
-              duration={`${project.time} min`}
-              url={project.filename}
-              timestamp={project.timestamp}
-            />
-          </li>
-        ))
-      }
-    </ul>
-  </Section>
+
+  <div class="grid-overlay min-h-screen py-16">
+    <Section class="max-w-5xl mx-auto">
+      <!-- Header with vertical label -->
+      <div class="relative mb-16 px-4">
+        <span class="absolute left-0 top-0 label-rotated opacity-40">
+          ALL POSTS
+        </span>
+        <h1 class="text-6xl md:text-7xl font-bold pl-8 md:pl-12">
+          {GLOBAL.articlesName}
+        </h1>
+      </div>
+
+      <!-- Article list with alternating styles -->
+      <ul class="space-y-6 px-4">
+        {
+          articles.map((article, index) => (
+            <li class={`
+              ${index % 2 === 0
+                ? 'border-l-brutal-thick border-sage'
+                : 'border-r-brutal border-black bg-sage-bg'
+              }
+            `}>
+              <div class={index % 2 === 0 ? 'pl-6' : 'pr-6'}>
+                <ArticleSnippet
+                  title={article.title}
+                  description={article.description}
+                  duration={`${article.time} min`}
+                  url={article.filename}
+                  timestamp={article.timestamp}
+                />
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </Section>
+  </div>
 </Layout>
