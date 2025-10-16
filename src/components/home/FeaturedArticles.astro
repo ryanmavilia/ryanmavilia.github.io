@@ -1,36 +1,47 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import { GLOBAL } from "../../lib/variables";
 import ArticleSnippet from "../ArticleSnippet.astro";
-import Anchor from "../common/Anchor.astro";
 
 interface Props {
-  featuredArticles: CollectionEntry<"articles">[];
+  featuredArticles: any[];
 }
 
 const { featuredArticles } = Astro.props;
 ---
 
-<div class="flex justify-between items-center w-full">
-  <h3 class="font-display text-lg sm:text-xl leading-loose">
-    {GLOBAL.articlesName}
-  </h3>
-  <Anchor url="/blog" class="text-base">{GLOBAL.viewAll}</Anchor>
-</div>
-<div>
-  <!-- <h2 class="text-3xl font-bold mb-8">Featured Articles</h2> -->
-  <div class="grid gap-8">
-    {
-      (featuredArticles.length === 0 && <p>{GLOBAL.noArticles}</p>) ||
-        featuredArticles.map((article) => (
+<section class="relative py-16 bg-white -mt-16 z-20">
+  <div class="max-w-5xl mx-auto px-4">
+    <!-- Section header with floating metadata -->
+    <div class="relative mb-12">
+      <h2 class="text-5xl md:text-6xl font-bold leading-none mb-4">
+        ARTICLES
+      </h2>
+      <div class="absolute -top-4 -right-4 transform rotate-45 border-brutal-thin px-3 py-1 bg-white">
+        <span class="text-xs uppercase tracking-wider block transform -rotate-45">
+          Selected Works
+        </span>
+      </div>
+    </div>
+
+    <!-- Chaotic article grid -->
+    <ul class="space-y-0">
+      {featuredArticles.map((article, index) => (
+        <li
+          class={`
+            ${index === 0 ? 'mb-8' : ''}
+            ${index === 1 ? 'md:inline-block md:w-[55%] md:mr-4' : ''}
+            ${index === 2 ? 'md:inline-block md:w-[calc(45%-1rem)] md:align-top' : ''}
+          `}
+        >
           <ArticleSnippet
             title={article.title}
             description={article.description}
+            duration={`${article.time} min`}
             url={article.filename}
             timestamp={article.timestamp}
-            duration={`${article.time} min`}
+            variant={index === 0 ? 'featured' : 'default'}
           />
-        ))
-    }
+        </li>
+      ))}
+    </ul>
   </div>
-</div>
+</section>
