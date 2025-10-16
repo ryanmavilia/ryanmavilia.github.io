@@ -1,5 +1,126 @@
-<div
-  class="w-full font-mono prose prose-headings:font-mono prose-img:rounded-none prose-p:text-[var(--color-zag-dark)] prose-p:dark:text-[var(--color-zag-light)]  prose-a:underline-offset-4 prose-h1:text-2xl prose-a:text-[var(--color-zag-dark)] dark:prose-a:text-[var(--color-zag-light)] prose-headings:text-[var(--color-zag-dark)] prose-headings:dark:text-[var(--color-zag-light)] prose-p:text-justify prose-code:text-[var(--color-zag-dark)] dark:prose-code:text-[var(--color-zag-light)] prose-h2:text-2xl prose-h3:text-xl prose-h4:text-lg prose-h5:text-base prose-h6:text-sm prose-strong:text-[var(--color-zag-dark)] dark:prose-strong:text-[var(--color-zag-light)] prose-li:text-[var(--color-zag-dark)] dark:prose-li:text-[var(--color-zag-light)] prose-ul:marker:text-[var(--color-zag-dark)] prose-ul:dark:marker:text-[var(--color-zag-light)] prose-ol:marker:text-[var(--color-zag-dark)] prose-ol:dark:marker:text-[var(--color-zag-light)] prose-a:offset-[var(--zag-offset)] prose-a:focus:outline-2 prose-a:focus:outline-offset-2 prose-a:focus:outline-zag-dark prose-a:dark:focus:outline-zag-light"
->
+<div class="prose-brutalist">
   <slot />
 </div>
+
+<style>
+  .prose-brutalist {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .prose-brutalist :global(p) {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-brutalist :global(h2) {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid black;
+    padding-bottom: 0.5rem;
+  }
+
+  .prose-brutalist :global(h3) {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose-brutalist :global(ul),
+  .prose-brutalist :global(ol) {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+  }
+
+  .prose-brutalist :global(li) {
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+  }
+
+  .prose-brutalist :global(blockquote) {
+    font-size: 24px;
+    line-height: 1.6;
+    padding: 2rem;
+    margin: 3rem -2rem;
+    background: var(--color-sage);
+    color: white;
+    border-left: 8px solid black;
+    max-width: 100vw;
+  }
+
+  .prose-brutalist :global(code) {
+    background: black;
+    color: white;
+    padding: 0.2em 0.4em;
+    font-size: 0.9em;
+    border: 2px solid black;
+  }
+
+  .prose-brutalist :global(pre) {
+    background: black;
+    color: white;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border: 4px solid black;
+    overflow-x: auto;
+  }
+
+  .prose-brutalist :global(pre code) {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .prose-brutalist :global(a) {
+    color: var(--color-sage-dark);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+    transition: all 0.2s;
+  }
+
+  .prose-brutalist :global(a:hover) {
+    background: var(--color-sage);
+    color: white;
+    text-decoration: none;
+  }
+
+  .prose-brutalist :global(img) {
+    width: 100%;
+    max-width: 100vw;
+    margin: 3rem -2rem;
+    border: 4px solid black;
+  }
+
+  .prose-brutalist :global(hr) {
+    border: none;
+    border-top: 4px solid black;
+    margin: 3rem 0;
+    width: 120%;
+    margin-left: -10%;
+  }
+
+  @media (max-width: 768px) {
+    .prose-brutalist :global(blockquote) {
+      margin-left: 0;
+      margin-right: 0;
+      font-size: 20px;
+    }
+
+    .prose-brutalist :global(img) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .prose-brutalist :global(hr) {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+</style>
