@@ -2,22 +2,52 @@
 import { GLOBAL } from "../../lib/variables";
 ---
 
-<div class="flex flex-col items-center sm:flex-row gap-8">
-  <img
-    src="/me.jpg"
-    alt="Ryan Mavilia picture"
-    class="rounded-full max-w-40 w-40 h-40 mb-4 z-0 grayscale"
-  />
-  <div>
-    <h1
-      class="text-3xl sm:text-4xl font-display font-semibold opsz text-center sm:text-left"
-    >
-      {GLOBAL.username}
-    </h1>
-    <h2
-      class="text-center text-xl sm:text-2xl font-mono font-medium sm:text-left"
-    >
-      Professional Rubber Duck<br />
-    </h2>
+<div class="relative grid-overlay py-16 md:py-24">
+  <div class="max-w-5xl mx-auto px-4">
+    <!-- Floating rotated label -->
+    <div class="absolute left-4 top-8 label-rotated opacity-60">
+      PORTFOLIO
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 relative">
+      <!-- Photo with sage background block -->
+      <div class="relative z-10">
+        <div class="absolute -inset-4 md:-inset-6 bg-sage -z-10 transform md:-rotate-1"></div>
+        <img
+          src="/me.jpg"
+          alt="Ryan Mavilia"
+          class="w-48 h-48 md:w-64 md:h-64 object-cover border-brutal grayscale hover:grayscale-0 transition-all duration-300"
+        />
+        <!-- Rotated metadata label -->
+        <span class="absolute -right-6 top-8 label-rotated text-sage-dark">
+          2025
+        </span>
+      </div>
+
+      <!-- Text content -->
+      <div class="flex-1 md:pt-8">
+        <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-4 break-words">
+          {GLOBAL.username.split(' ').map((word, i) => (
+            <span class={i === 0 ? 'block' : 'block md:inline'}>
+              {word}
+              {i === 0 && <br class="md:hidden" />}
+            </span>
+          ))}
+        </h1>
+
+        <div class="relative inline-block">
+          <h2 class="text-xl md:text-2xl font-medium relative z-10">
+            Professional Rubber Duck
+          </h2>
+          <!-- Underline accent -->
+          <div class="absolute bottom-0 left-0 w-full h-2 bg-sage -z-10"></div>
+        </div>
+
+        <!-- Rotated side label for desktop -->
+        <span class="hidden md:block absolute -left-8 top-32 label-rotated text-xs opacity-40">
+          TITLE
+        </span>
+      </div>
+    </div>
   </div>
 </div>
