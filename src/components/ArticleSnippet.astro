@@ -20,7 +20,7 @@ const rotation = Math.floor(Math.random() * 7) - 3;
 <a
   href={url}
   class={`
-    block group relative overflow-hidden transition-all duration-300
+    block group relative overflow-hidden transition-all duration-150
     ${variant === 'featured'
       ? 'bg-sage text-white border-brutal p-8 hover:bg-sage-dark'
       : 'bg-white border-brutal-thin p-6 hover:border-brutal hover:border-sage'
@@ -59,6 +59,6 @@ const rotation = Math.floor(Math.random() * 7) - 3;
     `}>
       {duration}
     </span>
-    <span class="text-sm group-hover:translate-x-1 transition-transform">→</span>
+    <span class="text-sm group-hover:translate-x-1 transition-transform duration-150">→</span>
   </div>
 </a>
