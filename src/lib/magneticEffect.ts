@@ -8,6 +8,13 @@ interface MagneticElement {
   type: string;
   rect: DOMRect;
   radius: number;
+  originalStyles: {
+    transform: string;
+    letterSpacing: string;
+    width: string;
+  };
+  bgElement?: HTMLElement;
+  bgOriginalTransform?: string;
 }
 
 type EffectHandler = (element: HTMLElement, intensity: number) => void;
@@ -29,16 +36,37 @@ export function initMagneticEffect(): () => void {
 
   if (elements.length === 0) return () => {};
 
-  // Initialize elements with their config
+  // Initialize elements with their config and capture original styles
   elements.forEach(element => {
     const type = element.dataset.magnetic || 'lift';
     const radius = parseInt(element.dataset.magneticRadius || '300', 10);
+
+    // Capture original inline styles
+    const originalStyles = {
+      transform: element.style.transform || '',
+      letterSpacing: element.style.letterSpacing || '',
+      width: element.style.width || ''
+    };
+
+    // Capture background element and its original transform if this is a lift type
+    let bgElement: HTMLElement | undefined;
+    let bgOriginalTransform: string | undefined;
+    if (type === 'lift') {
+      const bg = element.querySelector<HTMLElement>('.bg-sage');
+      if (bg) {
+        bgElement = bg;
+        bgOriginalTransform = bg.style.transform || '';
+      }
+    }
 
     magneticElements.push({
       element,
       type,
       rect: element.getBoundingClientRect(),
-      radius
+      radius,
+      originalStyles,
+      bgElement,
+      bgOriginalTransform
     });
   });
 
@@ -83,7 +111,7 @@ export function initMagneticEffect(): () => void {
 
   // Calculate distance and apply effects
   const updateEffects = (mouseX: number, mouseY: number) => {
-    magneticElements.forEach(({ element, type, rect, radius }) => {
+    magneticElements.forEach(({ element, type, rect, radius, originalStyles, bgElement, bgOriginalTransform }) => {
       // Calculate element center
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
@@ -106,18 +134,15 @@ export function initMagneticEffect(): () => void {
           console.warn(`Unknown magnetic effect type: ${type}`);
         }
       } else {
-        // Reset when outside radius
+        // Reset to original styles when outside radius
         element.classList.remove('magnetic-active');
-        element.style.transform = '';
-        element.style.letterSpacing = '';
-        element.style.width = '';
+        element.style.transform = originalStyles.transform;
+        element.style.letterSpacing = originalStyles.letterSpacing;
+        element.style.width = originalStyles.width;
 
-        // Reset sage background if exists
-        if (type === 'lift') {
-          const bg = element.querySelector<HTMLElement>('.bg-sage');
-          if (bg) {
-            bg.style.transform = '';
-          }
+        // Reset sage background to original if exists
+        if (bgElement && bgOriginalTransform !== undefined) {
+          bgElement.style.transform = bgOriginalTransform;
         }
       }
     });
@@ -137,17 +162,14 @@ export function initMagneticEffect(): () => void {
 
   // Handle mouse leave
   const handleMouseLeave = () => {
-    magneticElements.forEach(({ element, type }) => {
+    magneticElements.forEach(({ element, originalStyles, bgElement, bgOriginalTransform }) => {
       element.classList.remove('magnetic-active');
-      element.style.transform = '';
-      element.style.letterSpacing = '';
-      element.style.width = '';
+      element.style.transform = originalStyles.transform;
+      element.style.letterSpacing = originalStyles.letterSpacing;
+      element.style.width = originalStyles.width;
 
-      if (type === 'lift') {
-        const bg = element.querySelector<HTMLElement>('.bg-sage');
-        if (bg) {
-          bg.style.transform = '';
-        }
+      if (bgElement && bgOriginalTransform !== undefined) {
+        bgElement.style.transform = bgOriginalTransform;
       }
     });
   };
@@ -178,16 +200,31 @@ export function initMagneticEffect(): () => void {
 
   // Return cleanup function
   return () => {
+    // Remove event listeners
     document.removeEventListener('mousemove', handleMouseMove);
     document.removeEventListener('mouseleave', handleMouseLeave);
     window.removeEventListener('resize', handleResize);
     window.removeEventListener('scroll', handleResize);
+
+    // Clear timeouts and animation frames
     if (resizeTimeout !== null) {
       clearTimeout(resizeTimeout);
     }
     if (animationFrameId !== null) {
       cancelAnimationFrame(animationFrameId);
     }
+
+    // Restore original styles for all elements
+    magneticElements.forEach(({ element, originalStyles, bgElement, bgOriginalTransform }) => {
+      element.classList.remove('magnetic-active');
+      element.style.transform = originalStyles.transform;
+      element.style.letterSpacing = originalStyles.letterSpacing;
+      element.style.width = originalStyles.width;
+
+      if (bgElement && bgOriginalTransform !== undefined) {
+        bgElement.style.transform = bgOriginalTransform;
+      }
+    });
   };
 }
 
