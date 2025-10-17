@@ -5,6 +5,11 @@
  */
 
 export function initGridEffect(): () => void {
+  // Check for reduced motion preference
+  if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return () => {};
+  }
+
   // Find all grid overlay elements
   const gridElements = document.querySelectorAll<HTMLElement>('.grid-overlay');
 
