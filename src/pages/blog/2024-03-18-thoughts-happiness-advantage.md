@@ -15,8 +15,6 @@ slug: thoughts-happiness-advantage
 filename: 2024-03-18-thoughts-happiness-advantage
 ---
 
-# Thoughts on The Happiness Advantage by Shawn Achor
-
 > Happiness is not the belief that we don't need to change it is the realization that we can.
 
 ## Introduction

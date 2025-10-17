@@ -27,8 +27,6 @@ keywords:
   - phone addiction recovery
 ---
 
-# Kill Your Boredom Killer
-
 Lately, the running theme for this blog has been anti-phone, and this post is no different. I can see how getting back my life and embracing boredom is leading to real improvements.
 
 ## The Failed Experiments

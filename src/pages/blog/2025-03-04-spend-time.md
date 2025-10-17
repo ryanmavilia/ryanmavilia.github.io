@@ -18,8 +18,6 @@ slug: spend-time
 filename: 2025-03-04-spend-time
 ---
 
-# Where to spend my time(?)
-
 Lately I've been thinking a lot about time spent. As I approach my thirties I'm thinking a lot about what progress I want to make and where. It can't be overstated enough that in today's society it is difficult to find yourself without something to do.
 
 I think often back to a video I watched in which the author, who may have been [Clark Kegley](https://www.youtube.com/@clarkkegley), talks about a thought experiment. Think about your life and where you want it to be in 5 years time. What do you want accomplished, projects completed, things acquired/learned, etc. Now think about what your life has looked like for the past 90 days. If you were to continue to repeat those past 90 days for the next 5 years would you end up in the same place that you envisioned?

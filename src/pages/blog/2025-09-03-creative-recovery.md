@@ -7,8 +7,6 @@ published: true
 layout: ../../layouts/BlogLayout.astro
 ---
 
-# Creative Recovery: How Small Projects Beat Big Burnout
-
 ## Why create at all
 
 Lately I've been wondering if it even makes sense for me to create during this gap period of my career. This isn't my first time being laid off but it is the first time I've decided to stay unemployed for an extended period of time.

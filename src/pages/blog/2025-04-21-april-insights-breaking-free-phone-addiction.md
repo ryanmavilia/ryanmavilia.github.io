@@ -23,8 +23,6 @@ keywords:
   - technology
 ---
 
-# April Insights
-
 This article started with some tools/ideas I picked up on this month but there is a theme: phone addiction. Just like every other 20 something year old, I've struggled with phone addiction. This month, I took a big swing with the scythe and reduced my addiction levels from knee height to ankle height. There's some other learnings as well which are adjacent about voice to text with LLMs, writing tools, and of course what I've been watching on TV. Enjoy!
 
 ## Tools that have stuck

@@ -23,8 +23,6 @@ keywords:
   - inspiration
 ---
 
-# Thirty Before Thirty
-
 Well I guess it's time to reflect on my life and see what I've accomplished so far. Eventually I'll be turning thirty and I want to make sure I've done everything I wanted to do before that time. Here's a list of thirty things I want to accomplish before I turn thirty.
 
 ## The List
