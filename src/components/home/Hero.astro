@@ -5,14 +5,19 @@ import { GLOBAL } from "../../lib/variables";
 <div class="relative grid-overlay py-16 md:py-24">
   <div class="max-w-5xl mx-auto px-4">
     <!-- Floating rotated label -->
-    <div class="absolute left-4 top-8 label-rotated opacity-60">
+    <!-- <div class="absolute left-4 top-8 label-rotated opacity-60">
       PORTFOLIO
-    </div>
+    </div> -->
 
-    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 relative">
+    <div
+      class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 relative"
+    >
       <!-- Photo with sage background block -->
       <div class="relative z-10">
-        <div class="absolute -inset-4 md:-inset-6 bg-sage -z-10 transform md:-rotate-1"></div>
+        <div
+          class="absolute -inset-4 md:-inset-6 bg-sage -z-10 transform md:-rotate-1"
+        >
+        </div>
         <img
           src="/me.jpg"
           alt="Ryan Mavilia"
@@ -26,13 +31,17 @@ import { GLOBAL } from "../../lib/variables";
 
       <!-- Text content -->
       <div class="flex-1 md:pt-8">
-        <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-4 break-words">
-          {GLOBAL.username.split(' ').map((word, i) => (
-            <span class={i === 0 ? 'block' : 'block md:inline'}>
-              {word}
-              {i === 0 && <br class="md:hidden" />}
-            </span>
-          ))}
+        <h1
+          class="text-5xl md:text-7xl font-bold leading-tight mb-4 break-words"
+        >
+          {
+            GLOBAL.username.split(" ").map((word, i) => (
+              <span class={i === 0 ? "block" : "block md:inline"}>
+                {word}
+                {i === 0 && <br class="md:hidden" />}
+              </span>
+            ))
+          }
         </h1>
 
         <div class="relative inline-block">
@@ -44,7 +53,9 @@ import { GLOBAL } from "../../lib/variables";
         </div>
 
         <!-- Rotated side label for desktop -->
-        <span class="hidden md:block absolute -left-8 top-32 label-rotated text-xs opacity-40">
+        <span
+          class="hidden md:block absolute -left-8 top-32 label-rotated text-xs opacity-40"
+        >
           TITLE
         </span>
       </div>

@@ -12,36 +12,31 @@ const { featuredArticles } = Astro.props;
   <div class="max-w-5xl mx-auto px-4">
     <!-- Section header with floating metadata -->
     <div class="relative mb-12">
-      <h2 class="text-5xl md:text-6xl font-bold leading-none mb-4">
-        ARTICLES
-      </h2>
-      <div class="absolute -top-4 -right-4 transform rotate-45 border-brutal-thin px-3 py-1 bg-white">
-        <span class="text-xs uppercase tracking-wider block transform -rotate-45">
-          Selected Works
-        </span>
-      </div>
+      <h2 class="text-5xl md:text-6xl font-bold leading-none mb-4">ARTICLES</h2>
     </div>
 
     <!-- Chaotic article grid -->
     <ul class="space-y-0">
-      {featuredArticles.map((article, index) => (
-        <li
-          class={`
-            ${index === 0 ? 'mb-8' : ''}
-            ${index === 1 ? 'md:inline-block md:w-[55%] md:mr-4' : ''}
-            ${index === 2 ? 'md:inline-block md:w-[calc(45%-1rem)] md:align-top' : ''}
+      {
+        featuredArticles.map((article, index) => (
+          <li
+            class={`
+            mb-8
+            
+            
           `}
-        >
-          <ArticleSnippet
-            title={article.title}
-            description={article.description}
-            duration={`${article.time} min`}
-            url={article.filename}
-            timestamp={article.timestamp}
-            variant={index === 0 ? 'featured' : 'default'}
-          />
-        </li>
-      ))}
+          >
+            <ArticleSnippet
+              title={article.title}
+              description={article.description}
+              duration={`${article.time} min`}
+              url={article.filename}
+              timestamp={article.timestamp}
+              variant={index === 0 ? "featured" : "default"}
+            />
+          </li>
+        ))
+      }
     </ul>
   </div>
 </section>
