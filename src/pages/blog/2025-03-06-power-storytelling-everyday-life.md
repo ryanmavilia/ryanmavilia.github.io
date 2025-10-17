@@ -15,8 +15,6 @@ date: 2025-03-06
 filename: 2025-03-06-power-storytelling-everyday-life
 ---
 
-# The Power of Storytelling in Everyday Life
-
 ## How context shapes our perceptions
 
 You stumble upon a blog and you're starting to skim through an article. It seems okay but something about it catches you off guard. The tone feels off. The ideas seem to make some sense but you're wondering why it's reading so incorrectly to you. You start browsing the authors about page and you see some words that make you feel THINGS! Not good things either!

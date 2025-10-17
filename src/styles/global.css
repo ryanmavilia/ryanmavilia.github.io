@@ -1,7 +1,6 @@
 @import "tailwindcss";
+@import './design-tokens.css';
 @plugin "@tailwindcss/typography";
-
-@variant dark (&:where(.dark, .dark *));
 
 @font-face {
   font-family: "Literata Variable";
@@ -33,94 +32,125 @@
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --font-display: "press-start-2p", ui-monospace, monospace;
   --font-serif: "Literata Variable", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --color-zag-dark: var(--color-neutral-900);
-  --color-zag-light: var(--color-neutral-100);
-  --color-zag-dark-muted: var(--color-neutral-600);
-  --color-zag-light-muted: var(--color-neutral-400);
-  --color-zag-accent-light: var(--color-emerald-400);
-  --color-zag-accent-light-muted: var(--color-emerald-300);
-  --color-zag-accent-dark: var(--color-emerald-600);
-  --color-zag-accent-dark-muted: var(--color-emerald-800);
+
+  /* Brutalist color system */
+  --color-sage: #87A878;
+  --color-sage-dark: #6B8A5F;
+  --color-sage-light: #A8C99E;
+  --color-sage-bg: rgba(135, 168, 120, 0.1);
+
+  /* Brutalist typography scale */
+  --font-size-xs: 10px;
+  --font-size-sm: 12px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 42px;
+  --font-size-4xl: 48px;
+  --font-size-5xl: 72px;
+  --font-size-6xl: 96px;
+  --font-size-7xl: 120px;
+
+  /* Brutalist borders */
+  --border-width-brutal: 4px;
+  --border-width-brutal-thin: 2px;
+  --border-width-brutal-thick: 8px;
+
+  /* Line heights */
+  --line-height-tight: 0.9;
+  --line-height-relaxed: 1.7;
+  --line-height-loose: 1.8;
 }
 
 @layer base {
-  :root {
-    --zag-stroke: 2px;
-    --zag-offset: 6px;
-    --zag-transition-duration: 0.15s;
-    --zag-transition-timing-function: ease-in-out;
+  /* Brutalist base styles */
+  body {
+    background: var(--color-white);
+    color: var(--color-black);
+    font-family: 'IBM Plex Mono', monospace;
+    line-height: 1.7;
   }
 
-  .zag-transition {
-    @media (prefers-reduced-motion: no-preference) {
-      transition:
-        background-color var(--zag-transition-duration) var(--zag-transition-timing-function),
-        color var(--zag-transition-duration) var(--zag-transition-timing-function),
-        fill var(--zag-transition-duration) var(--zag-transition-timing-function),
-        border-color var(--zag-transition-duration) var(--zag-transition-timing-function),
-        transform var(--zag-transition-duration) var(--zag-transition-timing-function);
-    }
+  /* Brutalist border utilities */
+  .border-brutal {
+    border: var(--border-width-brutal) solid var(--color-black);
   }
 
-  .zag-bg {
-    background-color: var(--color-zag-light);
-    :where(.dark, .dark *) & {
-      background-color: var(--color-zag-dark);
-    }
+  .border-brutal-thin {
+    border: var(--border-width-brutal-thin) solid var(--color-black);
   }
 
-  .-zag-bg {
-    background-color: var(--color-zag-dark);
-    :where(.dark, .dark *) & {
-      background-color: var(--color-zag-light);
-    }
-  }
-  
-  .zag-text {
-    color: var(--color-zag-dark);
-    :where(.dark, .dark *) & {
-      color: var(--color-zag-light);
-    }
+  .border-brutal-sage {
+    border: var(--border-width-brutal) solid var(--color-sage);
   }
 
-  .-zag-text {
-    color: var(--color-zag-light);
-    :where(.dark, .dark *) & {
-      color: var(--color-zag-dark);
-    }
+  .border-brutal-thick {
+    border: var(--border-width-brutal-thick) solid var(--color-black);
   }
 
-  .zag-muted {
-    color: var(--color-zag-dark-muted);
-    :where(.dark, .dark *) & {
-      color: var(--color-zag-light-muted);
-    }
+  /* Bottom-border-only utilities */
+  .border-b-brutal {
+    border-bottom: var(--border-width-brutal) solid var(--color-black);
   }
 
-  .zag-fill {
-    fill: var(--color-zag-dark);
-    &:where(.dark, .dark *) {
-      fill: var(--color-zag-light);
-    }
+  .border-b-brutal-thin {
+    border-bottom: var(--border-width-brutal-thin) solid var(--color-black);
   }
 
-  .zag-text-muted {
-    color: var(--color-zag-dark-muted);
-    &:where(.dark, .dark *) {
-      color: var(--color-zag-light-muted);
-    }
+  .border-b-brutal-thick {
+    border-bottom: var(--border-width-brutal-thick) solid var(--color-black);
   }
 
-  .zag-border-b {
-    border-bottom: var(--zag-stroke) solid;
-    border-color: var(--color-zag-dark);
-    &:where(.dark, .dark *) {
-      border-color: var(--color-zag-light);
-    }
+  /* Rotated label utility */
+  .label-rotated {
+    font-size: var(--font-size-xs);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
 
-  .zag-offset {
-    text-underline-offset: var(--zag-offset);
+  /* Grid overlay for construction aesthetic */
+  .grid-overlay {
+    background-image:
+      repeating-linear-gradient(0deg, var(--color-grid), var(--color-grid) 1px, transparent 1px, transparent 80px),
+      repeating-linear-gradient(90deg, var(--color-grid), var(--color-grid) 1px, transparent 1px, transparent 80px);
+    transition: transform 0.15s ease-out;
+  }
+
+  /* Warp effect when hovering over grid */
+  .grid-overlay.warping {
+    will-change: transform;
+  }
+
+  /* No shadows allowed - pure flat design */
+  * {
+    box-shadow: none !important;
+  }
+
+  /* Smooth transitions for interactive elements - only color/background/border (avoid layout/paint) */
+  a, button {
+    transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+  }
+
+  /* Helper to hint the browser to promote transforms to the compositor for smoother motion */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  /* Magnetic hover effects */
+  [data-magnetic] {
+    transition: transform 0.25s ease-out, letter-spacing 0.25s ease-out, width 0.25s ease-out;
+  }
+
+  [data-magnetic].magnetic-active {
+    will-change: transform;
+  }
+
+  /* Sage background within magnetic lift elements */
+  [data-magnetic="lift"] .bg-sage {
+    transition: transform 0.25s ease-out;
   }
 
   .opsz {

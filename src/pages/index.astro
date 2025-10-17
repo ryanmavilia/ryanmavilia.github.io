@@ -3,7 +3,6 @@ import { featuredArticles } from "../lib/featured";
 import { GLOBAL } from "../lib/variables";
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/home/Hero.astro";
-import Section from "../components/common/Section.astro";
 import FeaturedArticles from "../components/home/FeaturedArticles.astro";
 ---
 
@@ -29,10 +28,7 @@ import FeaturedArticles from "../components/home/FeaturedArticles.astro";
     <meta name="language" content="English" />
     <link rel="canonical" href={GLOBAL.rootUrl} />
   </Fragment>
-  <Section class="my-16">
-    <Hero />
-  </Section>
-  <Section>
-    <FeaturedArticles featuredArticles={featuredArticles} />
-  </Section>
+
+  <Hero />
+  <FeaturedArticles featuredArticles={featuredArticles} />
 </Layout>

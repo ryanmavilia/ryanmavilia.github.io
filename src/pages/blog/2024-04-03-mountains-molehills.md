@@ -14,8 +14,6 @@ date: 2024-04-03
 filename: 2024-04-03-mountains-molehills
 ---
 
-# Mountains to Molehills
-
 When starting a new project, it's important to be realistic about the challenges involved. I'm working on
 an app that allows users to create collaborative SoundCloud playlists. It was awesome to get the first API
 call to work to just update a playlist with whatever songs I provided. I was so ready to build more

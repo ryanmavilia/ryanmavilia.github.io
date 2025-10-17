@@ -23,8 +23,6 @@ keywords:
   - productivity
 ---
 
-# May Insights
-
 Like clockwork it's the end of the month and I haven't written a blog post yet. I was going to skip it but then I realized that this is the perfect opportunity to write about the importance of persistence in personal growth. This month I've been continuing to curb the phone addiction. But there's been some other cool random things in the homelab that I've changed up too!
 
 ## Fighting the phone addiction

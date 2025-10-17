@@ -7,8 +7,6 @@ description: The start of writing based on a random prompt this week we talk abo
 layout: ../../layouts/BlogLayout.astro
 ---
 
-# {{title}}
-
 This is the first post in a new series where I write based on a random prompt. This week's prompt is write about the last photo you took.
 
 This is not meant to be an exercise of writing skills but rather one of discipline. Trying to get back into the habit of having constraints and requirements to add friction that allow me to continue creating and ignore the flood of noise.
