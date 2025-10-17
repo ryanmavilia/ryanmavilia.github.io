@@ -103,6 +103,12 @@
     background-image:
       repeating-linear-gradient(0deg, var(--color-grid), var(--color-grid) 1px, transparent 1px, transparent 80px),
       repeating-linear-gradient(90deg, var(--color-grid), var(--color-grid) 1px, transparent 1px, transparent 80px);
+    transition: transform 0.15s ease-out;
+  }
+
+  /* Warp effect when hovering over grid */
+  .grid-overlay.warping {
+    will-change: transform;
   }
 
   /* No shadows allowed - pure flat design */
