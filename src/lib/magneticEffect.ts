@@ -39,7 +39,12 @@ export function initMagneticEffect(): () => void {
   // Initialize elements with their config and capture original styles
   elements.forEach(element => {
     const type = element.dataset.magnetic || 'lift';
-    const radius = parseInt(element.dataset.magneticRadius || '300', 10);
+
+    // Parse radius with validation to prevent NaN or invalid values
+    const radiusValue = parseInt(element.dataset.magneticRadius || '300', 10);
+    const radius = (Number.isNaN(radiusValue) || !Number.isFinite(radiusValue) || radiusValue <= 0)
+      ? 300
+      : radiusValue;
 
     // Capture original inline styles
     const originalStyles = {
