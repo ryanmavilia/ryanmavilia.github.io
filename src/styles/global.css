@@ -126,6 +126,20 @@
     will-change: transform;
   }
 
+  /* Magnetic hover effects */
+  [data-magnetic] {
+    transition: transform 0.25s ease-out, letter-spacing 0.25s ease-out, width 0.25s ease-out;
+  }
+
+  [data-magnetic].magnetic-active {
+    will-change: transform;
+  }
+
+  /* Sage background within magnetic lift elements */
+  [data-magnetic="lift"] .bg-sage {
+    transition: transform 0.25s ease-out;
+  }
+
   .opsz {
     font-variation-settings: "opsz" 72;
   }
