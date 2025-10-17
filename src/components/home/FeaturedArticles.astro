@@ -1,8 +1,16 @@
 ---
 import ArticleSnippet from "../ArticleSnippet.astro";
 
+interface Article {
+  title: string;
+  description: string;
+  time: number;
+  filename: string;
+  timestamp: string;
+}
+
 interface Props {
-  featuredArticles: any[];
+  featuredArticles: Article[];
 }
 
 const { featuredArticles } = Astro.props;

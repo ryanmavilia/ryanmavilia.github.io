@@ -4,11 +4,11 @@
  * Adds warping effect when hovering over grid elements
  */
 
-export function initGridEffect() {
+export function initGridEffect(): () => void {
   // Find all grid overlay elements
   const gridElements = document.querySelectorAll<HTMLElement>('.grid-overlay');
 
-  if (gridElements.length === 0) return;
+  if (gridElements.length === 0) return () => {};
 
   // Damping factor - controls how much the grid moves (lower = more subtle)
   const DAMPING = 0.015;
@@ -69,20 +69,32 @@ export function initGridEffect() {
   document.addEventListener('mousemove', handleMouseMove);
 
   // Reset on mouse leave
-  document.addEventListener('mouseleave', () => {
+  const handleMouseLeave = () => {
     gridElements.forEach(element => {
       element.classList.remove('warping');
       element.style.backgroundPosition = '0px 0px';
       element.style.transform = '';
     });
-  });
+  };
+  document.addEventListener('mouseleave', handleMouseLeave);
+
+  // Return cleanup function
+  return () => {
+    document.removeEventListener('mousemove', handleMouseMove);
+    document.removeEventListener('mouseleave', handleMouseLeave);
+  };
 }
 
 // Auto-initialize when DOM is ready
 if (typeof document !== 'undefined') {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initGridEffect);
+  // Skip if user prefers reduced motion
+  if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Early exit - no initialization for users who prefer reduced motion
   } else {
-    initGridEffect();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initGridEffect);
+    } else {
+      initGridEffect();
+    }
   }
 }

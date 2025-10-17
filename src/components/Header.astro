@@ -10,6 +10,8 @@ import Anchor from "./common/Anchor.astro";
       id="mobile-menu-toggle"
       class="p-2 border-brutal-thin hover:bg-sage transition-colors"
       aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="main-nav"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -119,6 +121,7 @@ import Anchor from "./common/Anchor.astro";
 
   function toggleNav() {
     isOpen = !isOpen;
+    toggle?.setAttribute('aria-expanded', String(isOpen));
     updateNavState();
   }
 

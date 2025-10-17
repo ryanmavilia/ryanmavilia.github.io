@@ -20,8 +20,9 @@ const {
 } = Astro.props;
 const formattedDate = processArticleDate(timestamp.toString());
 
-// Random slight rotation for dates (-3 to 3 degrees)
-const rotation = Math.floor(Math.random() * 7) - 3;
+// Deterministic rotation based on article title hash (-3 to 3 degrees)
+const hash = title.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+const rotation = (hash % 7) - 3;
 ---
 
 <a

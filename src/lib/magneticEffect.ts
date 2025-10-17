@@ -12,22 +12,22 @@ interface MagneticElement {
 
 type EffectHandler = (element: HTMLElement, intensity: number) => void;
 
-export function initMagneticEffect() {
+export function initMagneticEffect(): () => void {
   // Check for reduced motion preference
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    return;
+    return () => {};
   }
 
   // Disable on touch devices
   if ('ontouchstart' in window) {
-    return;
+    return () => {};
   }
 
   // Find all magnetic elements
   const magneticElements: MagneticElement[] = [];
   const elements = document.querySelectorAll<HTMLElement>('[data-magnetic]');
 
-  if (elements.length === 0) return;
+  if (elements.length === 0) return () => {};
 
   // Initialize elements with their config
   elements.forEach(element => {
@@ -175,6 +175,20 @@ export function initMagneticEffect() {
 
   // Initial rect update
   updateRects();
+
+  // Return cleanup function
+  return () => {
+    document.removeEventListener('mousemove', handleMouseMove);
+    document.removeEventListener('mouseleave', handleMouseLeave);
+    window.removeEventListener('resize', handleResize);
+    window.removeEventListener('scroll', handleResize);
+    if (resizeTimeout !== null) {
+      clearTimeout(resizeTimeout);
+    }
+    if (animationFrameId !== null) {
+      cancelAnimationFrame(animationFrameId);
+    }
+  };
 }
 
 // Auto-initialize when DOM is ready

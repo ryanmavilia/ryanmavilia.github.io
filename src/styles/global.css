@@ -74,37 +74,37 @@
 
   /* Brutalist border utilities */
   .border-brutal {
-    border: var(--border-thick) solid var(--color-black);
+    border: var(--border-width-brutal) solid var(--color-black);
   }
 
   .border-brutal-thin {
-    border: var(--border-thin) solid var(--color-black);
+    border: var(--border-width-brutal-thin) solid var(--color-black);
   }
 
   .border-brutal-sage {
-    border: var(--border-thick) solid var(--color-sage);
+    border: var(--border-width-brutal) solid var(--color-sage);
   }
 
   .border-brutal-thick {
-    border: var(--border-extra) solid var(--color-black);
+    border: var(--border-width-brutal-thick) solid var(--color-black);
   }
 
   /* Bottom-border-only utilities */
   .border-b-brutal {
-    border-bottom: var(--border-thick) solid var(--color-black);
+    border-bottom: var(--border-width-brutal) solid var(--color-black);
   }
 
   .border-b-brutal-thin {
-    border-bottom: var(--border-thin) solid var(--color-black);
+    border-bottom: var(--border-width-brutal-thin) solid var(--color-black);
   }
 
   .border-b-brutal-thick {
-    border-bottom: var(--border-extra) solid var(--color-black);
+    border-bottom: var(--border-width-brutal-thick) solid var(--color-black);
   }
 
   /* Rotated label utility */
   .label-rotated {
-    font-size: var(--text-xs);
+    font-size: var(--font-size-xs);
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     letter-spacing: 0.1em;
