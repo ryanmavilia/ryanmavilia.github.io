@@ -111,7 +111,17 @@
   .prose-brutalist :global(a:hover) {
     background: var(--color-sage);
     color: white;
-    text-decoration: none;
+    text-decoration: underline;
+  }
+
+  .prose-brutalist :global(a:focus-visible) {
+    outline: 3px solid var(--color-sage);
+    outline-offset: 2px;
+    text-decoration: underline;
+  }
+
+  .prose-brutalist :global(a:visited) {
+    color: var(--color-sage-dark);
   }
 
   .prose-brutalist :global(img) {

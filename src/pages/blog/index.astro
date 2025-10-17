@@ -39,7 +39,7 @@ import { articles } from "../../lib/list";
     <Section class="max-w-5xl mx-auto">
       <!-- Header with vertical label -->
       <div class="relative mb-16 px-4">
-        <span class="absolute left-0 top-0 label-rotated opacity-40">
+        <span aria-hidden="true" class="absolute left-0 top-0 label-rotated opacity-40">
           ALL POSTS
         </span>
         <h1 class="text-6xl md:text-7xl font-bold pl-8 md:pl-12">
@@ -63,7 +63,7 @@ import { articles } from "../../lib/list";
                   description={article.description}
                   duration={`${article.time} min`}
                   url={article.filename}
-                  timestamp={article.timestamp}
+                  timestamp={new Date(article.timestamp)}
                 />
               </div>
             </li>

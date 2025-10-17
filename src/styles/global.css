@@ -1,6 +1,6 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 @import './design-tokens.css';
+@plugin "@tailwindcss/typography";
 
 @font-face {
   font-family: "Literata Variable";
@@ -87,6 +87,19 @@
 
   .border-brutal-thick {
     border: var(--border-extra) solid var(--color-black);
+  }
+
+  /* Bottom-border-only utilities */
+  .border-b-brutal {
+    border-bottom: var(--border-thick) solid var(--color-black);
+  }
+
+  .border-b-brutal-thin {
+    border-bottom: var(--border-thin) solid var(--color-black);
+  }
+
+  .border-b-brutal-thick {
+    border-bottom: var(--border-extra) solid var(--color-black);
   }
 
   /* Rotated label utility */

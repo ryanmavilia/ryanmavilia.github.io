@@ -31,7 +31,7 @@ const { featuredArticles } = Astro.props;
               description={article.description}
               duration={`${article.time} min`}
               url={article.filename}
-              timestamp={article.timestamp}
+              timestamp={new Date(article.timestamp)}
               variant={index === 0 ? "featured" : "default"}
             />
           </li>
