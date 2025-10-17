@@ -21,12 +21,12 @@ type EffectHandler = (element: HTMLElement, intensity: number) => void;
 
 export function initMagneticEffect(): () => void {
   // Check for reduced motion preference
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     return () => {};
   }
 
   // Disable on touch devices
-  if ('ontouchstart' in window) {
+  if (typeof window !== 'undefined' && 'ontouchstart' in window) {
     return () => {};
   }
 
