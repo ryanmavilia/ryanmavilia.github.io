@@ -3,8 +3,8 @@ import { GLOBAL } from "../../lib/variables";
 ---
 
 <script>
-  import { initGridEffect } from '../../lib/gridEffect';
-  import { initMagneticEffect } from '../../lib/magneticEffect';
+  import { initGridEffect } from "../../lib/gridEffect";
+  import { initMagneticEffect } from "../../lib/magneticEffect";
   initGridEffect();
   initMagneticEffect();
 </script>
@@ -20,7 +20,11 @@ import { GLOBAL } from "../../lib/variables";
       class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 relative"
     >
       <!-- Photo with sage background block -->
-      <div class="relative z-10" data-magnetic="lift" data-magnetic-radius="300">
+      <div
+        class="relative z-10"
+        data-magnetic="lift"
+        data-magnetic-radius="300"
+      >
         <div
           class="absolute -inset-4 md:-inset-6 bg-sage -z-10 transform md:-rotate-1"
         >
@@ -31,7 +35,11 @@ import { GLOBAL } from "../../lib/variables";
           class="w-48 h-48 md:w-64 md:h-64 object-cover border-brutal grayscale hover:grayscale-0 transition-all duration-300"
         />
         <!-- Rotated metadata label -->
-        <span class="absolute -right-6 top-8 label-rotated text-sage-dark" data-magnetic="slideRight" data-magnetic-radius="250">
+        <span
+          class="absolute -right-10 top-8 label-rotated text-sage-dark"
+          data-magnetic="slideRight"
+          data-magnetic-radius="250"
+        >
           2025
         </span>
       </div>
@@ -58,16 +66,21 @@ import { GLOBAL } from "../../lib/variables";
             Professional Rubber Duck
           </h2>
           <!-- Underline accent -->
-          <div class="absolute bottom-0 left-0 w-full h-2 bg-sage -z-10" data-magnetic="underline" data-magnetic-radius="200"></div>
+          <div
+            class="absolute bottom-0 left-0 w-full h-2 bg-sage -z-10"
+            data-magnetic="underline"
+            data-magnetic-radius="200"
+          >
+          </div>
         </div>
 
         <!-- Rotated side label for desktop -->
         <span
-          class="hidden md:block absolute -left-8 top-32 label-rotated text-xs opacity-40"
+          class="hidden md:block absolute -left-10 top-32 label-rotated text-xs opacity-40"
           data-magnetic="slideLeft"
           data-magnetic-radius="200"
         >
-          TITLE
+          PROFILE.JPG
         </span>
       </div>
     </div>
