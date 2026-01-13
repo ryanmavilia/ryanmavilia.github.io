@@ -1,5 +1,5 @@
 {
-  "name": "second-star",
+  "name": "ryanmavilia.com",
   "type": "module",
   "version": "5.5.1",
   "scripts": {
@@ -11,6 +11,10 @@
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "lint": "eslint ."
+  },
+
+  "engines": {
+    "node": ">=22.0.0"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.14",
