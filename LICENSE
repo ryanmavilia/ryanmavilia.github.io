@@ -1,15 +1,21 @@
-Copyright (c) 2024 Ryan Mavilia. All rights reserved.
+MIT License
 
-This license applies only to the content within the `/src/pages/blog` directory and its subdirectories. All blog posts, including but not limited to text, images, code snippets, and ideas within these blog posts, are protected by copyright law. No part of the blog content may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the copyright holder.
+Copyright (c) 2023 Sat Naing
 
-Exceptions:
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-1. Brief quotations for the purpose of criticism, comment, news reporting, teaching, scholarship, or research are permitted under fair use.
-2. Code snippets that are explicitly marked as "free to use" or "open source" may be used according to their specific terms.
-3. Links to this blog and its content are welcome and encouraged.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-For permission requests, please contact me through the contact information provided on this site.
-
-Note: The website's technical implementation (including but not limited to the Astro configuration, components, styles, and other code outside the blog directory) is available under the MIT License in the root directory.
-
-All rights reserved.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

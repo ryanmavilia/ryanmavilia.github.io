@@ -1,159 +1,70 @@
 @import "tailwindcss";
-@import './design-tokens.css';
-@plugin "@tailwindcss/typography";
+@import "./typography.css";
 
-@font-face {
-  font-family: "Literata Variable";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 200 900;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/literata:vf@latest/latin-opsz-normal.woff2)
-    format("woff2-variations");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
-    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+:root,
+html[data-theme="light"] {
+  --background: #e7f0e7;
+  --foreground: #212a23;
+  --accent: rgb(52, 80, 65);
+  --muted: #ebf0ed;
+  --border: #c5d5cc;
 }
 
-@font-face {
-  font-family: "press-start-2p";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/press-start-2p@latest/latin-400-normal.woff2)
-      format("woff2"),
-    url(https://cdn.jsdelivr.net/fontsource/fonts/press-start-2p@latest/latin-400-normal.woff)
-      format("woff");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
-    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+html[data-theme="dark"] {
+  --background: #111815;
+  --foreground: #ecf2ee;
+  --accent: #6fa88a;
+  --muted: #1f2823;
+  --border: #364740;
 }
 
-@theme {
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --font-display: "press-start-2p", ui-monospace, monospace;
-  --font-serif: "Literata Variable", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-
-  /* Brutalist color system */
-  --color-sage: #87A878;
-  --color-sage-dark: #6B8A5F;
-  --color-sage-light: #A8C99E;
-  --color-sage-bg: rgba(135, 168, 120, 0.1);
-
-  /* Brutalist typography scale */
-  --font-size-xs: 10px;
-  --font-size-sm: 12px;
-  --font-size-base: 16px;
-  --font-size-lg: 18px;
-  --font-size-xl: 24px;
-  --font-size-2xl: 32px;
-  --font-size-3xl: 42px;
-  --font-size-4xl: 48px;
-  --font-size-5xl: 72px;
-  --font-size-6xl: 96px;
-  --font-size-7xl: 120px;
-
-  /* Brutalist borders */
-  --border-width-brutal: 4px;
-  --border-width-brutal-thin: 2px;
-  --border-width-brutal-thick: 8px;
-
-  /* Line heights */
-  --line-height-tight: 0.9;
-  --line-height-relaxed: 1.7;
-  --line-height-loose: 1.8;
+@theme inline {
+  --font-app: var(--font-google-sans-code);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
 }
 
 @layer base {
-  /* Brutalist base styles */
-  body {
-    background: var(--color-white);
-    color: var(--color-black);
-    font-family: 'IBM Plex Mono', monospace;
-    line-height: 1.7;
-  }
-
-  /* Brutalist border utilities */
-  .border-brutal {
-    border: var(--border-width-brutal) solid var(--color-black);
-  }
-
-  .border-brutal-thin {
-    border: var(--border-width-brutal-thin) solid var(--color-black);
-  }
-
-  .border-brutal-sage {
-    border: var(--border-width-brutal) solid var(--color-sage);
-  }
-
-  .border-brutal-thick {
-    border: var(--border-width-brutal-thick) solid var(--color-black);
-  }
-
-  /* Bottom-border-only utilities */
-  .border-b-brutal {
-    border-bottom: var(--border-width-brutal) solid var(--color-black);
-  }
-
-  .border-b-brutal-thin {
-    border-bottom: var(--border-width-brutal-thin) solid var(--color-black);
-  }
-
-  .border-b-brutal-thick {
-    border-bottom: var(--border-width-brutal-thick) solid var(--color-black);
-  }
-
-  /* Rotated label utility */
-  .label-rotated {
-    font-size: var(--font-size-xs);
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  /* Grid overlay for construction aesthetic */
-  .grid-overlay {
-    background-image:
-      repeating-linear-gradient(0deg, var(--color-grid), var(--color-grid) 1px, transparent 1px, transparent 80px),
-      repeating-linear-gradient(90deg, var(--color-grid), var(--color-grid) 1px, transparent 1px, transparent 80px);
-    transition: transform 0.15s ease-out;
-  }
-
-  /* Warp effect when hovering over grid */
-  .grid-overlay.warping {
-    will-change: transform;
-  }
-
-  /* No shadows allowed - pure flat design */
   * {
-    box-shadow: none !important;
+    @apply border-border outline-accent/75;
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-muted) transparent;
   }
+  html {
+    @apply overflow-y-scroll scroll-smooth;
+  }
+  body {
+    @apply flex min-h-svh flex-col bg-background font-app text-foreground selection:bg-accent/75 selection:text-background;
+  }
+  a,
+  button {
+    @apply outline-offset-1 outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
 
-  /* Smooth transitions for interactive elements - only color/background/border (avoid layout/paint) */
-  a, button {
-    transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
-  }
+@utility max-w-app {
+  @apply max-w-3xl;
+}
 
-  /* Helper to hint the browser to promote transforms to the compositor for smoother motion */
-  .will-change-transform {
-    will-change: transform;
-  }
+@utility app-layout {
+  @apply mx-auto w-full max-w-app px-4;
+}
 
-  /* Magnetic hover effects */
-  [data-magnetic] {
-    transition: transform 0.25s ease-out, letter-spacing 0.25s ease-out, width 0.25s ease-out;
-  }
+.active-nav {
+  @apply underline decoration-wavy decoration-2 underline-offset-8;
+}
 
-  [data-magnetic].magnetic-active {
-    will-change: transform;
-  }
-
-  /* Sage background within magnetic lift elements */
-  [data-magnetic="lift"] .bg-sage {
-    transition: transform 0.25s ease-out;
-  }
-
-  .opsz {
-    font-variation-settings: "opsz" 72;
-  }
+/* Source: https://piccalil.li/blog/a-more-modern-css-reset/ */
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 1rem;
 }
