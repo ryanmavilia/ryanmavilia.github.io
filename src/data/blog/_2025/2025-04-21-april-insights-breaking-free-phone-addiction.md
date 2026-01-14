@@ -5,11 +5,13 @@ pubDatetime: 2025-04-21T01:44:33Z
 featured: true
 draft: false
 tags:
-  - motivation
-  - personal growth
   - phone addiction
+  - personal growth
   - productivity
   - technology
+  - mindfulness
+  - digital wellness
+  - self-improvement
 slug: april-insights-breaking-free-phone-addiction
 ---
 

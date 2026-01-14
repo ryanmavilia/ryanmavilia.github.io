@@ -4,6 +4,12 @@ description: The start of writing based on a random prompt this week we talk abo
 pubDatetime: 2025-08-09T00:00:00Z
 featured: false
 draft: false
+tags:
+  - writing
+  - creativity
+  - blogging
+  - photography
+  - lifestyle
 ---
 
 This is the first post in a new series where I write based on a random prompt. This week's prompt is write about the last photo you took.

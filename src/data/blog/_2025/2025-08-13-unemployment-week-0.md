@@ -4,6 +4,13 @@ description: "First week without a job and how I'm feeling about it."
 pubDatetime: 2025-08-13T00:00:00Z
 featured: false
 draft: false
+tags:
+  - career
+  - unemployment
+  - self-improvement
+  - personal growth
+  - life lessons
+  - software engineering
 ---
 
 # Unemployment v2 Week 0
