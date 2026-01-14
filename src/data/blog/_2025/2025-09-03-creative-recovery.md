@@ -4,6 +4,14 @@ description: "Trying to create while burnt out might be the key to recovery. As 
 pubDatetime: 2025-09-03T00:00:00Z
 featured: true
 draft: false
+slug: creative-recovery
+tags:
+  - burnout
+  - creativity
+  - personal growth
+  - habit building
+  - mental health
+  - self-improvement
 ---
 
 ## Why create at all

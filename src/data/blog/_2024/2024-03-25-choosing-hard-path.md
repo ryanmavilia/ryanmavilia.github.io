@@ -7,6 +7,9 @@ draft: false
 tags:
   - philosophy
   - motivation
+  - life lessons
+  - mindset
+  - personal growth
 slug: choosing-hard-path
 ---
 

@@ -5,11 +5,12 @@ pubDatetime: 2025-03-20T15:28:19Z
 featured: false
 draft: false
 tags:
-  - happiness
   - life goals
   - motivation
   - personal development
-  - productivity
+  - goal setting
+  - self-improvement
+  - lifestyle
 slug: personal-goals
 ---
 

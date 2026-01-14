@@ -7,6 +7,10 @@ draft: false
 tags:
   - philosophy
   - motivation
+  - time management
+  - productivity
+  - goal setting
+  - self-improvement
 slug: spend-time
 ---
 

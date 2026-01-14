@@ -8,6 +8,9 @@ tags:
   - books
   - productivity
   - happiness
+  - personal growth
+  - self-improvement
+  - mental health
 slug: thoughts-happiness-advantage
 ---
 

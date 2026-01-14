@@ -7,6 +7,9 @@ draft: false
 tags:
   - development
   - productivity
+  - software engineering
+  - project management
+  - goal setting
 slug: mountains-molehills
 ---
 

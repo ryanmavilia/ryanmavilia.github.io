@@ -5,12 +5,13 @@ pubDatetime: 2025-06-09T17:34:29Z
 featured: true
 draft: false
 tags:
-  - personal growth
   - phone addiction
-  - productivity
   - creativity
   - mindfulness
   - technology
+  - mental clarity
+  - digital wellness
+  - personal growth
 slug: kill-boredom-killer
 ---
 

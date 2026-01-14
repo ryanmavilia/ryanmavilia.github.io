@@ -10,6 +10,8 @@ tags:
   - personal growth
   - phone addiction
   - productivity
+  - technology
+  - homelab
 slug: may-insights-embracing-persistence
 ---
 
