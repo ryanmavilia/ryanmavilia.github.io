@@ -2,7 +2,7 @@
 title: Choosing the Hard Path
 description: A reflection on motivation, meaning, and making difficult choices in life
 pubDatetime: 2024-03-25T00:00:00Z
-featured: true
+featured: false
 draft: false
 tags:
   - philosophy

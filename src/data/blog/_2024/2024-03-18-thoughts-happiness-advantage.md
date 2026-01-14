@@ -2,7 +2,7 @@
 title: Thoughts on The Happiness Advantage
 description: A review and analysis of Shawn Achor's book on happiness and its impact on success
 pubDatetime: 2024-03-18T00:00:00Z
-featured: true
+featured: false
 draft: false
 tags:
   - books

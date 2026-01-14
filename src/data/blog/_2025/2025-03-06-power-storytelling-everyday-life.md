@@ -69,7 +69,7 @@ Personally I always wanted to be really social. I've always had friends but neve
 
 It started with my mom who ran her highschool reunions, volunteered with the PTA at my school, and worked at a financial business in my county that lead to her knowing so many people. But the odd thing was whenever I told her how amazed I was at how social and extroverted she was. She always reminded me that she wasn't always like this. My mom tells me she was very shy in highschool and even now isn't always very quick to talk. But once you get that lady going...
 
-![mom talking to friend meme](/mom-talking-friend-meme.png)
+![mom talking to friend meme](@/assets/images/mom-talking-friend-meme.png)
 
 The point being I wanted to have the same transformation as her. At the time I was freshly single and so there was an added desire to be able to ask someone out in real life rather than on a dating app.
 

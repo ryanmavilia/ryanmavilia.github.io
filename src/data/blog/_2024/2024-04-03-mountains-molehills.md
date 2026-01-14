@@ -2,7 +2,7 @@
 title: Mountains to Molehills
 description: Exploring the challenges of starting new projects and finding the right balance between planning and action
 pubDatetime: 2024-04-03T00:00:00Z
-featured: true
+featured: false
 draft: false
 tags:
   - development

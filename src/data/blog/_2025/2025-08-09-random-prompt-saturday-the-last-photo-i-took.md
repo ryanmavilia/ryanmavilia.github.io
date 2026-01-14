@@ -2,7 +2,7 @@
 title: "Random Prompt Saturday: The Last Photo I Took"
 description: The start of writing based on a random prompt this week we talk about raw beef.
 pubDatetime: 2025-08-09T00:00:00Z
-featured: true
+featured: false
 draft: false
 ---
 
@@ -10,7 +10,7 @@ This is the first post in a new series where I write based on a random prompt. T
 
 This is not meant to be an exercise of writing skills but rather one of discipline. Trying to get back into the habit of having constraints and requirements to add friction that allow me to continue creating and ignore the flood of noise.
 
-![Raw Beef Lemon Salad](/images/raw_beef.jpeg)
+![Raw Beef Lemon Salad](@/assets/images/raw_beef.jpeg)
 
 ## Raw Beef
 
