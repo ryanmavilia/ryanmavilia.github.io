@@ -2,7 +2,7 @@
 title: "May Insights: Embracing Persistence for Growth"
 description: Explore May's insights on persistence and personal growth while tackling phone addiction and enhancing your homelab experience.
 pubDatetime: 2025-05-31T15:53:52Z
-featured: true
+featured: false
 draft: false
 tags:
   - motivation

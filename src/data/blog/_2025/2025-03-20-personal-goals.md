@@ -2,7 +2,7 @@
 title: Thirty Personal Goals Before Thirty
 description: Explore thirty personal goals to achieve before turning thirty, from travel adventures to self-improvement milestones.
 pubDatetime: 2025-03-20T15:28:19Z
-featured: true
+featured: false
 draft: false
 tags:
   - happiness

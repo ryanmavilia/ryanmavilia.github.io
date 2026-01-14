@@ -2,7 +2,7 @@
 title: "Random Prompt Saturday: The Last Photo I Took"
 description: The start of writing based on a random prompt this week we talk about raw beef.
 pubDatetime: 2025-08-09T00:00:00Z
-featured: true
+featured: false
 draft: false
 ---
 

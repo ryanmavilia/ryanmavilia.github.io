@@ -2,7 +2,7 @@
 title: Where to spend my time
 description: Navigating the fleeting resource of time and how to use it correctly
 pubDatetime: 2025-03-05T05:23:00Z
-featured: true
+featured: false
 draft: false
 tags:
   - philosophy
