@@ -10,7 +10,7 @@ This is the first post in a new series where I write based on a random prompt. T
 
 This is not meant to be an exercise of writing skills but rather one of discipline. Trying to get back into the habit of having constraints and requirements to add friction that allow me to continue creating and ignore the flood of noise.
 
-![Raw Beef Lemon Salad](/images/raw_beef.jpeg)
+![Raw Beef Lemon Salad](@/assets/images/raw_beef.jpeg)
 
 ## Raw Beef
 

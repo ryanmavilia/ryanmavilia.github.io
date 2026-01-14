@@ -29,7 +29,7 @@ On both Mac and iPhone you can add it to your control center to make it easy to 
 
 ### Untrap YouTube and SocialFocus
 
-![youtube homescreen with only 3 recommendations ](/images/april-2025-youtube-homescreen.png)
+![youtube homescreen with only 3 recommendations ](@/assets/images/april-2025-youtube-homescreen.png)
 
 - https://socialfocus.app/
 - https://untrap.app/
