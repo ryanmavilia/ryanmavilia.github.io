@@ -14,7 +14,7 @@ tags:
   - developer-workflow
   - system-configuration
 ---
-+ # Getting Back Into Linux 
+
 Lately I've been jumping back into the world of Linux as an exercise in "rearranging my room". Just like I did when I was a kid I like to rearrange my environment to see if it makes it easier to get thigns done. It's been years since I've had a working Linux setup but getting back to productive has been made much faster thanks to AI. It has been a fun experiment and I've learned a bit about Arch Linux or more specifically EndeavourOs as well as myself. 
 
 I'm far from an AI enthusiast, but I must say that it does help with abstracting away from CRUD work. I used it to:
