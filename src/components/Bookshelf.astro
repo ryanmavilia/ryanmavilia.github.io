@@ -1,5 +1,11 @@
 ---
-import type { Book } from "@/types/book";
+interface Book {
+  title: string;
+  author: string;
+  description: string;
+  review?: string;
+  summary?: string;
+}
 
 interface Props {
   books: Book[];
@@ -8,304 +14,522 @@ interface Props {
   showTitles?: boolean;
 }
 
-const {
-  books,
-  shelfColor = "#8B4513",
-  booksPerShelf = 9,
-  showTitles = true,
+const { 
+  books, 
+  shelfColor = "#8B4513", 
+  booksPerShelf = 9, 
+  showTitles = true 
 } = Astro.props;
 
-// Seeded random function based on string (book title)
+// Seeded random number generator based on string hash
 function hashString(str: string): number {
   let hash = 0;
   for (let i = 0; i < str.length; i++) {
     const char = str.charCodeAt(i);
-    hash = (hash << 5) - hash + char;
-    hash = hash & hash; // Convert to 32-bit integer
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
   }
   return Math.abs(hash);
 }
 
-// Generate consistent random values from seed
-function seededRandom(seed: number, min: number, max: number): number {
+function seededRandom(seed: number): number {
   const x = Math.sin(seed) * 10000;
-  const rand = x - Math.floor(x);
-  return Math.floor(rand * (max - min + 1)) + min;
+  return x - Math.floor(x);
 }
 
-// Color palette for book spines
-const colorPalette = [
-  "#8B4513", // SaddleBrown
-  "#A0522D", // Sienna
+// Warm color palette for book spines
+const bookColors = [
+  "#8B3A3A", // Indian red
   "#CD853F", // Peru
-  "#D2691E", // Chocolate
-  "#B22222", // FireBrick
-  "#8B0000", // DarkRed
-  "#800000", // Maroon
-  "#2F4F4F", // DarkSlateGray
-  "#556B2F", // DarkOliveGreen
-  "#483D8B", // DarkSlateBlue
-  "#191970", // MidnightBlue
-  "#4B0082", // Indigo
-  "#8B008B", // DarkMagenta
-  "#6B8E23", // OliveDrab
-  "#BC8F8F", // RosyBrown
-  "#CD5C5C", // IndianRed
-  "#4682B4", // SteelBlue
-  "#5F9EA0", // CadetBlue
-  "#6A5ACD", // SlateBlue
-  "#708090", // SlateGray
+  "#2F4F4F", // Dark slate gray
+  "#6B4423", // Brown leather
+  "#4A4A6A", // Dusty blue
+  "#8B7355", // Burlywood dark
+  "#556B2F", // Dark olive green
+  "#704214", // Sepia
+  "#4F4F4F", // Dark gray
+  "#7B3F00", // Chocolate
+  "#3D3D5C", // Navy dusty
+  "#5C4033", // Dark brown
+  "#3E5641", // Hunter green
+  "#6B3E3E", // Rosewood
+  "#4A3728", // Coffee
+  "#2D4A4A", // Deep teal
+  "#5D3A1A", // Rust brown
+  "#483D8B", // Dark slate blue
+  "#6B4226", // Saddle brown
+  "#3B3B4F", // Charcoal blue
 ];
 
-// Generate book display properties
-const booksWithProps = books.map(book => {
-  const seed = hashString(book.title);
-  const colorIndex = seed % colorPalette.length;
-  const color = colorPalette[colorIndex];
-  const height = seededRandom(seed, 200, 280);
-  const width = seededRandom(seed + 1, 40, 65);
-
+// Generate book styles based on title hash
+function getBookStyle(title: string, index: number) {
+  const hash = hashString(title + index);
+  const colorIndex = hash % bookColors.length;
+  const height = 200 + (seededRandom(hash) * 80); // 200-280px
+  const width = 40 + (seededRandom(hash + 1) * 25); // 40-65px
+  const tilt = (seededRandom(hash + 2) - 0.5) * 3; // -1.5 to 1.5 degrees
+  
   return {
-    ...book,
-    color,
-    height,
-    width,
+    backgroundColor: bookColors[colorIndex],
+    height: `${Math.floor(height)}px`,
+    width: `${Math.floor(width)}px`,
+    tilt: `${tilt.toFixed(1)}deg`,
   };
-});
+}
 
-// Group books into shelves
-const shelves: typeof booksWithProps[] = [];
-for (let i = 0; i < booksWithProps.length; i += booksPerShelf) {
-  shelves.push(booksWithProps.slice(i, i + booksPerShelf));
+// Split books into shelf rows
+const shelves: Book[][] = [];
+for (let i = 0; i < books.length; i += booksPerShelf) {
+  shelves.push(books.slice(i, i + booksPerShelf));
 }
 ---
 
 <div class="bookshelf-container">
-  {
-    shelves.map((shelf, shelfIndex) => (
-      <div class="shelf-wrapper" data-shelf={shelfIndex + 1}>
-        <div class="books-row">
-          {shelf.map((book, bookIndex) => (
-            <div
-              class="book"
-              style={`
-                background-color: ${book.color};
-                height: ${book.height}px;
-                width: ${book.width}px;
-              `}
-              data-book-id={`shelf-${shelfIndex}-book-${bookIndex}`}
+  {shelves.map((shelfBooks, shelfIndex) => (
+    <div class="shelf-row" data-shelf={shelfIndex}>
+      <div class="books-container">
+        {shelfBooks.map((book, bookIndex) => {
+          const globalIndex = shelfIndex * booksPerShelf + bookIndex;
+          const style = getBookStyle(book.title, globalIndex);
+          const isRightSide = bookIndex >= Math.ceil(shelfBooks.length / 2);
+          
+          return (
+            <div 
+              class="book-wrapper"
+              data-right={isRightSide}
             >
-              {showTitles && (
-                <div class="book-title">
-                  {book.title}
+              <div 
+                class="book"
+                style={`
+                  --book-color: ${style.backgroundColor};
+                  --book-height: ${style.height};
+                  --book-width: ${style.width};
+                  --book-tilt: ${style.tilt};
+                `}
+              >
+                <div class="book-spine">
+                  {showTitles && (
+                    <span class="book-title">{book.title}</span>
+                  )}
                 </div>
-              )}
-
-              <div class="book-tooltip">
-                <h3>{book.title}</h3>
-                <p class="author">by {book.author}</p>
+                <div class="book-top"></div>
+                <div class="book-side"></div>
+              </div>
+              
+              <div class="tooltip-card" data-position={isRightSide ? 'left' : 'right'}>
                 <div class="tooltip-content">
-                  <p class="description">{book.description}</p>
+                  <h3 class="tooltip-title">{book.title}</h3>
+                  <p class="tooltip-author">by {book.author}</p>
+                  <p class="tooltip-description">{book.description}</p>
                   {book.review && (
-                    <div class="review">
-                      <strong>Review:</strong>
+                    <div class="tooltip-section">
+                      <h4>Review</h4>
                       <p>{book.review}</p>
                     </div>
                   )}
                   {book.summary && (
-                    <div class="summary">
-                      <strong>Summary:</strong>
+                    <div class="tooltip-section">
+                      <h4>Summary</h4>
                       <p>{book.summary}</p>
                     </div>
                   )}
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-        <div class="shelf" style={`background-color: ${shelfColor};`} />
+          );
+        })}
       </div>
-    ))
-  }
+      
+      <div class="shelf" style={`--shelf-color: ${shelfColor};`}>
+        <div class="shelf-front"></div>
+        <div class="shelf-top"></div>
+        <div class="shelf-shadow"></div>
+      </div>
+    </div>
+  ))}
 </div>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Libre+Baskerville:wght@400;700&display=swap');
+
   .bookshelf-container {
-    width: 100%;
-    padding: 2rem 0;
-  }
-
-  .shelf-wrapper {
+    --tooltip-width: 320px;
+    font-family: 'Crimson Pro', Georgia, serif;
+    padding: 40px 20px;
+    background: linear-gradient(
+      180deg,
+      #1a1410 0%,
+      #2d2319 50%,
+      #1a1410 100%
+    );
+    min-height: 100vh;
     position: relative;
-    margin-bottom: 4.5rem;
-    z-index: 1;
   }
 
-  .books-row {
+  .shelf-row {
+    position: relative;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    /* CRITICAL: No overflow restrictions - allows tooltips to escape */
+  }
+
+  /* When ANY book-wrapper inside is hovered, elevate the entire shelf-row */
+  .shelf-row:has(.book-wrapper:hover) {
+    z-index: 1000;
+  }
+
+  .books-container {
     display: flex;
     align-items: flex-end;
-    gap: 8px;
-    padding: 1.5rem 1rem 0.5rem;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
+    gap: 4px;
+    padding: 0 40px;
+    min-height: 300px;
+    position: relative;
   }
 
-  .shelf {
-    height: 26px;
-    width: 100%;
-    border-radius: 2px;
-    box-shadow:
-      0 2px 4px rgba(0, 0, 0, 0.3),
-      0 8px 12px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(
-      to bottom,
-      var(--shelf-color, #8B4513),
-      color-mix(in srgb, var(--shelf-color, #8B4513) 80%, black)
-    );
+  .book-wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
   }
 
   .book {
-    z-index: 10;
+    width: var(--book-width);
+    height: var(--book-height);
     position: relative;
-    flex-shrink: 0;
-    border-radius: 2px;
-    box-shadow:
-      2px 2px 4px rgba(0, 0, 0, 0.3),
-      inset -2px 0 4px rgba(0, 0, 0, 0.2),
-      inset 2px 0 4px rgba(255, 255, 255, 0.1);
-    transition:
-      transform 0.2s ease,
-      box-shadow 0.2s ease;
+    transform-style: preserve-3d;
+    transform: rotateZ(var(--book-tilt));
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.3s ease;
     cursor: pointer;
-    border-left: 2px solid rgba(0, 0, 0, 0.2);
-    border-right: 2px solid rgba(255, 255, 255, 0.15);
   }
 
-  .book:hover {
-    transform: translateY(-8px);
-    box-shadow:
-      2px 8px 12px rgba(0, 0, 0, 0.4),
-      inset -2px 0 4px rgba(0, 0, 0, 0.2),
-      inset 2px 0 4px rgba(255, 255, 255, 0.1);
+  .book-wrapper:hover .book {
+    transform: rotateZ(0deg) translateY(-12px);
+  }
+
+  .book-spine {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--book-color) 70%, black) 0%,
+      var(--book-color) 15%,
+      var(--book-color) 50%,
+      color-mix(in srgb, var(--book-color) 85%, black) 85%,
+      color-mix(in srgb, var(--book-color) 60%, black) 100%
+    );
+    border-radius: 2px 4px 4px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+      inset 0 0 0 1px rgba(255,255,255,0.05),
+      inset -2px 0 8px rgba(0,0,0,0.3),
+      2px 4px 12px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle embossed line details on spine */
+  .book-spine::before {
+    content: '';
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,215,0,0.3),
+      transparent
+    );
+  }
+
+  .book-spine::after {
+    content: '';
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,215,0,0.3),
+      transparent
+    );
   }
 
   .book-title {
     writing-mode: vertical-rl;
+    text-orientation: mixed;
     transform: rotate(180deg);
-    
-    font-size: 1rem;
-    font-weight: 600;
-    font-family: 'Times New Roman', Times, serif;
-    padding: 0.5rem 0.25rem;
-    text-align: center;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+    color: rgba(255, 248, 235, 0.9);
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(9px, 1.2vw, 11px);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    max-height: calc(var(--book-height) - 40px);
     overflow: hidden;
-    word-break: break-word;
-    hyphens: auto;
-    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 4px;
   }
 
-  .book-tooltip {
+  /* 3D book top edge */
+  .book-top {
     position: absolute;
-    left: calc(100% + 0.75rem);
-    bottom: 0;
-    transform: scale(0.95);
-    background: var(--color-background);
-    border: 2px solid var(--color-border);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: linear-gradient(
+      180deg,
+      #f5f0e6 0%,
+      #e8e0d0 100%
+    );
+    transform: rotateX(70deg);
+    transform-origin: top center;
+    border-radius: 1px;
+  }
+
+  /* 3D book side (pages) */
+  .book-side {
+    position: absolute;
+    top: 0;
+    right: -8px;
+    width: 10px;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      #f8f4ec 0%,
+      #f0ebe0 20%,
+      #e8e0d0 100%
+    );
+    transform: rotateY(70deg);
+    transform-origin: left center;
+    border-radius: 0 2px 2px 0;
+    /* Page lines effect */
+    background-image: repeating-linear-gradient(
+      180deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.03) 2px,
+      rgba(0,0,0,0.03) 3px
+    );
+  }
+
+  /* Shelf styling */
+  .shelf {
+    position: relative;
+    height: 24px;
+    margin-top: -2px;
+  }
+
+  .shelf-front {
+    height: 24px;
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--shelf-color) 120%, white) 0%,
+      var(--shelf-color) 20%,
+      color-mix(in srgb, var(--shelf-color) 80%, black) 100%
+    );
+    border-radius: 0 0 4px 4px;
+    box-shadow: 
+      inset 0 2px 4px rgba(255,255,255,0.1),
+      0 4px 8px rgba(0,0,0,0.3);
+    /* Wood grain texture */
+    background-image: 
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 30px,
+        rgba(0,0,0,0.03) 30px,
+        rgba(0,0,0,0.03) 32px
+      );
+  }
+
+  .shelf-top {
+    position: absolute;
+    top: -8px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--shelf-color) 130%, white) 0%,
+      color-mix(in srgb, var(--shelf-color) 110%, white) 100%
+    );
+    transform: perspective(100px) rotateX(20deg);
+    transform-origin: bottom center;
+  }
+
+  .shelf-shadow {
+    position: absolute;
+    bottom: -15px;
+    left: 5%;
+    right: 5%;
+    height: 15px;
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,0.25) 0%,
+      transparent 100%
+    );
+    filter: blur(4px);
+    border-radius: 50%;
+  }
+
+  /* Tooltip card - positioned absolutely within wrapper */
+  .tooltip-card {
+    position: absolute;
+    bottom: 100%;
+    width: var(--tooltip-width);
+    background: linear-gradient(
+      145deg,
+      #faf8f5 0%,
+      #f5f2ec 100%
+    );
     border-radius: 8px;
-    padding: 1rem;
-    width: 320px;
-    max-width: 90vw;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: 
+      0 10px 40px rgba(0,0,0,0.4),
+      0 0 0 1px rgba(139, 69, 19, 0.2),
+      inset 0 1px 0 rgba(255,255,255,0.8);
     opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
     pointer-events: none;
-    transition:
-      opacity 0.2s ease,
-      transform 0.2s ease;
-    z-index: 10000;
+    margin-bottom: 20px;
+    /* Ensure tooltip is above everything */
+    z-index: 9999;
   }
 
-  .book:hover .book-tooltip {
+  /* Position tooltip to the right by default */
+  .tooltip-card[data-position="right"] {
+    left: calc(100% + 15px);
+  }
+
+  /* Position tooltip to the left for right-side books */
+  .tooltip-card[data-position="left"] {
+    right: calc(100% + 15px);
+    left: auto;
+  }
+
+  .book-wrapper:hover .tooltip-card {
     opacity: 1;
-    transform: translateX(0.25rem) scale(1);
-    pointer-events: auto;
-    z-index: 10000;
-  }
-
-  .book-tooltip h3 {
-    margin: 0 0 0.25rem;
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: var(--color-foreground);
-  }
-
-  .book-tooltip .author {
-    margin: 0 0 0.75rem;
-    font-size: 0.875rem;
-    color: var(--color-accent);
-    font-style: italic;
+    visibility: visible;
+    transform: translateY(0);
   }
 
   .tooltip-content {
-    font-size: 0.875rem;
-    line-height: 1.5;
-    color: var(--color-foreground);
+    padding: 20px;
   }
 
-  .tooltip-content .description {
-    margin-bottom: 0.75rem;
+  .tooltip-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d1810;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
   }
 
-  .tooltip-content .review,
-  .tooltip-content .summary {
-    margin-top: 0.75rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--color-border);
+  .tooltip-author {
+    font-family: 'Crimson Pro', serif;
+    font-size: 14px;
+    color: #8B4513;
+    margin: 0 0 12px 0;
+    font-style: italic;
   }
 
-  .tooltip-content strong {
-    display: block;
-    margin-bottom: 0.25rem;
-    color: var(--color-accent);
-    font-size: 0.8rem;
+  .tooltip-description {
+    font-family: 'Crimson Pro', serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4a3f35;
+    margin: 0;
+    border-top: 1px solid rgba(139, 69, 19, 0.15);
+    padding-top: 12px;
+  }
+
+  .tooltip-section {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(139, 69, 19, 0.15);
+  }
+
+  .tooltip-section h4 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #8B4513;
+    margin: 0 0 6px 0;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 1px;
   }
 
-  .tooltip-content p {
+  .tooltip-section p {
+    font-family: 'Crimson Pro', serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #5a4a40;
     margin: 0;
   }
 
+
+  /* Ambient lighting effect on container */
+  .bookshelf-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 200px;
+    background: radial-gradient(
+      ellipse at center top,
+      rgba(255, 220, 150, 0.08) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
   /* Responsive adjustments */
-  @media (max-width: 640px) {
-    .books-row {
-      padding: 1.5rem 0.5rem 0.5rem;
-      gap: 4px;
+  @media (max-width: 900px) {
+    .books-container {
+      padding: 0 20px;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
-    .book-tooltip {
-      width: 280px;
-      padding: 0.75rem;
-    }
-
-    .book-title {
-      font-size: 0.65rem;
-      padding: 0.25rem 0.125rem;
+    .tooltip-card {
+      --tooltip-width: 260px;
     }
   }
 
-  /* Handle tooltip positioning for books on the right edge */
-  .book:nth-last-child(-n+3) .book-tooltip {
-    left: auto;
-    right: calc(100% + 0.75rem);
-    transform: scale(0.95);
-  }
+  @media (max-width: 600px) {
+    .tooltip-card {
+      --tooltip-width: 220px;
+      position: fixed !important;
+      left: 50% !important;
+      right: auto !important;
+      transform: translateX(-50%) translateY(10px);
+      bottom: auto;
+      top: 20px;
+    }
 
-  .book:nth-last-child(-n+3):hover .book-tooltip {
-    transform: translateX(-0.25rem) scale(1);
+    .book-wrapper:hover .tooltip-card {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .tooltip-card::after {
+      display: none;
+    }
   }
 </style>
