@@ -1,0 +1,162 @@
+[
+  {
+    "title": "The Pragmatic Programmer",
+    "author": "David Thomas & Andrew Hunt",
+    "description": "Your journey to mastery. A guide for software craftsmanship covering best practices, tips, and philosophies.",
+    "review": "A timeless classic that every developer should read. Practical and actionable advice throughout."
+  },
+  {
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "description": "A handbook of agile software craftsmanship for writing readable, maintainable, and elegant code."
+  },
+  {
+    "title": "Designing Data-Intensive Applications",
+    "author": "Martin Kleppmann",
+    "description": "The big ideas behind reliable, scalable, and maintainable distributed systems.",
+    "review": "Incredibly comprehensive. Makes complex concepts accessible and practical."
+  },
+  {
+    "title": "The Phoenix Project",
+    "author": "Gene Kim, Kevin Behr & George Spafford",
+    "description": "A novel about IT, DevOps, and helping your business win through improved flow and feedback.",
+    "summary": "Illustrates DevOps principles through a compelling narrative about saving a failing IT project."
+  },
+  {
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "description": "Rules for focused success in a distracted world. The power of distraction-free concentration.",
+    "review": "Changed how I approach my work day. Incredibly effective strategies for focus."
+  },
+  {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "description": "Build good habits and break bad ones through tiny changes that deliver remarkable results.",
+    "review": "Practical and immediately applicable. The 1% improvement framework is powerful."
+  },
+  {
+    "title": "Eloquent JavaScript",
+    "author": "Marijn Haverbeke",
+    "description": "A modern introduction to programming with JavaScript, covering fundamentals and advanced topics."
+  },
+  {
+    "title": "You Don't Know JS",
+    "author": "Kyle Simpson",
+    "description": "Deep dive into the core mechanisms of JavaScript, exploring scope, closures, and the object system.",
+    "summary": "Goes beyond basic syntax to explain how JavaScript really works under the hood."
+  },
+  {
+    "title": "Refactoring",
+    "author": "Martin Fowler",
+    "description": "Improving the design of existing code through systematic techniques for restructuring.",
+    "review": "Essential reading for maintaining large codebases. The catalog of refactorings is invaluable."
+  },
+  {
+    "title": "Domain-Driven Design",
+    "author": "Eric Evans",
+    "description": "Tackling complexity in the heart of software through strategic design and ubiquitous language."
+  },
+  {
+    "title": "The Mythical Man-Month",
+    "author": "Frederick Brooks",
+    "description": "Essays on software engineering and project management, exploring why adding people to late projects makes them later.",
+    "summary": "Classic insights on software project management that remain relevant decades later."
+  },
+  {
+    "title": "Code Complete",
+    "author": "Steve McConnell",
+    "description": "A practical handbook of software construction covering design, coding, debugging, and testing."
+  },
+  {
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "description": "Explores the two systems that drive thinking: fast, intuitive System 1 and slow, deliberate System 2.",
+    "review": "Fascinating insights into how we make decisions and the biases that affect our judgment."
+  },
+  {
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "description": "A brief history of humankind, from the Stone Age to the modern age of artificial intelligence.",
+    "summary": "Explores how Homo sapiens came to dominate the world through cognitive, agricultural, and scientific revolutions."
+  },
+  {
+    "title": "Educated",
+    "author": "Tara Westover",
+    "description": "A memoir about growing up in rural Idaho and the transformative power of education.",
+    "review": "Powerful and moving. A testament to resilience and the pursuit of knowledge."
+  },
+  {
+    "title": "The Design of Everyday Things",
+    "author": "Don Norman",
+    "description": "How to create products that are easy to use, understand, and enjoy through good design principles."
+  },
+  {
+    "title": "Don't Make Me Think",
+    "author": "Steve Krug",
+    "description": "A common sense approach to web usability, making websites more intuitive and user-friendly.",
+    "summary": "Practical advice on creating websites that are obvious, self-evident, and self-explanatory."
+  },
+  {
+    "title": "Getting Things Done",
+    "author": "David Allen",
+    "description": "The art of stress-free productivity through capturing, organizing, and reviewing tasks.",
+    "review": "Revolutionary approach to personal productivity. The weekly review is a game-changer."
+  },
+  {
+    "title": "The Lean Startup",
+    "author": "Eric Ries",
+    "description": "How to use continuous innovation to create radically successful businesses through validated learning."
+  },
+  {
+    "title": "Meditations",
+    "author": "Marcus Aurelius",
+    "description": "Personal writings of the Roman Emperor on Stoic philosophy and self-improvement.",
+    "review": "Timeless wisdom on virtue, resilience, and living a meaningful life. Returns dividends with each reading."
+  },
+  {
+    "title": "Man's Search for Meaning",
+    "author": "Viktor Frankl",
+    "description": "A psychiatrist's account of surviving Nazi concentration camps and finding meaning in suffering.",
+    "summary": "Argues that we can find meaning in life even in the most brutal circumstances."
+  },
+  {
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "description": "Ancient Chinese military treatise on strategy, tactics, and leadership applicable beyond warfare."
+  },
+  {
+    "title": "How to Win Friends and Influence People",
+    "author": "Dale Carnegie",
+    "description": "Timeless principles for building relationships, winning people over, and becoming more influential.",
+    "review": "Surprisingly relevant today. The emphasis on genuine interest and empathy is powerful."
+  },
+  {
+    "title": "Essentialism",
+    "author": "Greg McKeown",
+    "description": "The disciplined pursuit of less but better, focusing on what truly matters.",
+    "summary": "Makes the case for doing fewer things but doing them exceptionally well."
+  },
+  {
+    "title": "Start with Why",
+    "author": "Simon Sinek",
+    "description": "How great leaders inspire action by starting with purpose before explaining how or what."
+  },
+  {
+    "title": "The 4-Hour Workweek",
+    "author": "Timothy Ferriss",
+    "description": "Escape the 9-5, live anywhere, and join the new rich through automation and lifestyle design.",
+    "review": "Provocative ideas about work, productivity, and lifestyle. Not all advice applies universally but worth reading."
+  },
+  {
+    "title": "Creativity, Inc.",
+    "author": "Ed Catmull",
+    "description": "Insights on building a creative culture from the co-founder of Pixar Animation Studios.",
+    "summary": "Explores how Pixar fosters creativity while maintaining commercial success in animation."
+  },
+  {
+    "title": "Zero to One",
+    "author": "Peter Thiel",
+    "description": "Notes on startups and how to build the future by creating something truly new.",
+    "review": "Contrarian and thought-provoking views on innovation and building valuable companies."
+  }
+]

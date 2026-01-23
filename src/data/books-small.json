@@ -1,0 +1,39 @@
+[
+  {
+    "title": "The Pragmatic Programmer",
+    "author": "David Thomas & Andrew Hunt",
+    "description": "Your journey to mastery. A guide for software craftsmanship covering best practices, tips, and philosophies for becoming a better programmer.",
+    "review": "A timeless classic that every developer should read. The advice is practical and actionable, covering everything from code organization to career development."
+  },
+  {
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "description": "A handbook of agile software craftsmanship that teaches how to write code that is readable, maintainable, and elegant.",
+    "summary": "Focuses on writing code that clearly expresses intent, with principles like meaningful names, small functions, and comprehensive testing."
+  },
+  {
+    "title": "Designing Data-Intensive Applications",
+    "author": "Martin Kleppmann",
+    "description": "The big ideas behind reliable, scalable, and maintainable systems. Explores the principles and trade-offs in distributed systems.",
+    "review": "Incredibly comprehensive and well-written. Makes complex distributed systems concepts accessible and practical."
+  },
+  {
+    "title": "The Phoenix Project",
+    "author": "Gene Kim, Kevin Behr & George Spafford",
+    "description": "A novel about IT, DevOps, and helping your business win. Follows an IT manager's journey to save a failing project.",
+    "summary": "Illustrates DevOps principles through a compelling narrative, showing how to improve flow, feedback, and continuous learning."
+  },
+  {
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "description": "Rules for focused success in a distracted world. Explores the power of distraction-free concentration.",
+    "review": "Changed how I approach my work day. The strategies for minimizing distractions and maximizing focus are incredibly effective.",
+    "summary": "Argues that the ability to focus without distraction is becoming increasingly rare and valuable in our economy."
+  },
+  {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "description": "An easy and proven way to build good habits and break bad ones through tiny changes that deliver remarkable results.",
+    "review": "Practical and immediately applicable. The 1% improvement framework is powerful for sustainable change."
+  }
+]

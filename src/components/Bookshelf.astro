@@ -1,0 +1,311 @@
+---
+import type { Book } from "@/types/book";
+
+interface Props {
+  books: Book[];
+  shelfColor?: string;
+  booksPerShelf?: number;
+  showTitles?: boolean;
+}
+
+const {
+  books,
+  shelfColor = "#8B4513",
+  booksPerShelf = 9,
+  showTitles = true,
+} = Astro.props;
+
+// Seeded random function based on string (book title)
+function hashString(str: string): number {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = (hash << 5) - hash + char;
+    hash = hash & hash; // Convert to 32-bit integer
+  }
+  return Math.abs(hash);
+}
+
+// Generate consistent random values from seed
+function seededRandom(seed: number, min: number, max: number): number {
+  const x = Math.sin(seed) * 10000;
+  const rand = x - Math.floor(x);
+  return Math.floor(rand * (max - min + 1)) + min;
+}
+
+// Color palette for book spines
+const colorPalette = [
+  "#8B4513", // SaddleBrown
+  "#A0522D", // Sienna
+  "#CD853F", // Peru
+  "#D2691E", // Chocolate
+  "#B22222", // FireBrick
+  "#8B0000", // DarkRed
+  "#800000", // Maroon
+  "#2F4F4F", // DarkSlateGray
+  "#556B2F", // DarkOliveGreen
+  "#483D8B", // DarkSlateBlue
+  "#191970", // MidnightBlue
+  "#4B0082", // Indigo
+  "#8B008B", // DarkMagenta
+  "#6B8E23", // OliveDrab
+  "#BC8F8F", // RosyBrown
+  "#CD5C5C", // IndianRed
+  "#4682B4", // SteelBlue
+  "#5F9EA0", // CadetBlue
+  "#6A5ACD", // SlateBlue
+  "#708090", // SlateGray
+];
+
+// Generate book display properties
+const booksWithProps = books.map(book => {
+  const seed = hashString(book.title);
+  const colorIndex = seed % colorPalette.length;
+  const color = colorPalette[colorIndex];
+  const height = seededRandom(seed, 200, 280);
+  const width = seededRandom(seed + 1, 40, 65);
+
+  return {
+    ...book,
+    color,
+    height,
+    width,
+  };
+});
+
+// Group books into shelves
+const shelves: typeof booksWithProps[] = [];
+for (let i = 0; i < booksWithProps.length; i += booksPerShelf) {
+  shelves.push(booksWithProps.slice(i, i + booksPerShelf));
+}
+---
+
+<div class="bookshelf-container">
+  {
+    shelves.map((shelf, shelfIndex) => (
+      <div class="shelf-wrapper" data-shelf={shelfIndex + 1}>
+        <div class="books-row">
+          {shelf.map((book, bookIndex) => (
+            <div
+              class="book"
+              style={`
+                background-color: ${book.color};
+                height: ${book.height}px;
+                width: ${book.width}px;
+              `}
+              data-book-id={`shelf-${shelfIndex}-book-${bookIndex}`}
+            >
+              {showTitles && (
+                <div class="book-title">
+                  {book.title}
+                </div>
+              )}
+
+              <div class="book-tooltip">
+                <h3>{book.title}</h3>
+                <p class="author">by {book.author}</p>
+                <div class="tooltip-content">
+                  <p class="description">{book.description}</p>
+                  {book.review && (
+                    <div class="review">
+                      <strong>Review:</strong>
+                      <p>{book.review}</p>
+                    </div>
+                  )}
+                  {book.summary && (
+                    <div class="summary">
+                      <strong>Summary:</strong>
+                      <p>{book.summary}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="shelf" style={`background-color: ${shelfColor};`} />
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .bookshelf-container {
+    width: 100%;
+    padding: 2rem 0;
+  }
+
+  .shelf-wrapper {
+    position: relative;
+    margin-bottom: 4.5rem;
+    z-index: 1;
+  }
+
+  .books-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    padding: 1.5rem 1rem 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .shelf {
+    height: 26px;
+    width: 100%;
+    border-radius: 2px;
+    box-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.3),
+      0 8px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(
+      to bottom,
+      var(--shelf-color, #8B4513),
+      color-mix(in srgb, var(--shelf-color, #8B4513) 80%, black)
+    );
+  }
+
+  .book {
+    z-index: 10;
+    position: relative;
+    flex-shrink: 0;
+    border-radius: 2px;
+    box-shadow:
+      2px 2px 4px rgba(0, 0, 0, 0.3),
+      inset -2px 0 4px rgba(0, 0, 0, 0.2),
+      inset 2px 0 4px rgba(255, 255, 255, 0.1);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+    cursor: pointer;
+    border-left: 2px solid rgba(0, 0, 0, 0.2);
+    border-right: 2px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .book:hover {
+    transform: translateY(-8px);
+    box-shadow:
+      2px 8px 12px rgba(0, 0, 0, 0.4),
+      inset -2px 0 4px rgba(0, 0, 0, 0.2),
+      inset 2px 0 4px rgba(255, 255, 255, 0.1);
+  }
+
+  .book-title {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0.5rem 0.25rem;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+    word-break: break-word;
+    hyphens: auto;
+    line-height: 1.2;
+  }
+
+  .book-tooltip {
+    position: absolute;
+    left: calc(100% + 0.75rem);
+    bottom: 0;
+    transform: scale(0.95);
+    background: var(--color-background);
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 320px;
+    max-width: 90vw;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+    z-index: 10000;
+  }
+
+  .book:hover .book-tooltip {
+    opacity: 1;
+    transform: translateX(0.25rem) scale(1);
+    pointer-events: auto;
+    z-index: 10000;
+  }
+
+  .book-tooltip h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-foreground);
+  }
+
+  .book-tooltip .author {
+    margin: 0 0 0.75rem;
+    font-size: 0.875rem;
+    color: var(--color-accent);
+    font-style: italic;
+  }
+
+  .tooltip-content {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--color-foreground);
+  }
+
+  .tooltip-content .description {
+    margin-bottom: 0.75rem;
+  }
+
+  .tooltip-content .review,
+  .tooltip-content .summary {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .tooltip-content strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--color-accent);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .tooltip-content p {
+    margin: 0;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .books-row {
+      padding: 1.5rem 0.5rem 0.5rem;
+      gap: 4px;
+    }
+
+    .book-tooltip {
+      width: 280px;
+      padding: 0.75rem;
+    }
+
+    .book-title {
+      font-size: 0.65rem;
+      padding: 0.25rem 0.125rem;
+    }
+  }
+
+  /* Handle tooltip positioning for books on the right edge */
+  .book:nth-last-child(-n+3) .book-tooltip {
+    left: auto;
+    right: calc(100% + 0.75rem);
+    transform: scale(0.95);
+  }
+
+  .book:nth-last-child(-n+3):hover .book-tooltip {
+    transform: translateX(-0.25rem) scale(1);
+  }
+</style>

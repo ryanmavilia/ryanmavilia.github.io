@@ -1,0 +1,53 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Bookshelf from "@/components/Bookshelf.astro";
+import booksData from "@/data/books-large.json";
+import type { Book } from "@/types/book";
+
+const books: Book[] = booksData;
+const title = "My Bookshelf";
+const description = "A collection of books I've read, currently reading, or want to read. Hover over any book to see details.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main id="main-content" class="app-layout">
+    <section class="pt-8 pb-6 border-b border-border">
+      <h1 class="text-2xl font-bold sm:text-3xl mb-4">
+        {title}
+      </h1>
+      <p class="text-foreground/80">
+        {description}
+      </p>
+    </section>
+
+    <section class="py-8">
+      <Bookshelf books={books} />
+    </section>
+
+    <section class="py-6 border-t border-border">
+      <details class="cursor-pointer">
+        <summary class="font-semibold text-accent hover:underline mb-2">
+          About this bookshelf
+        </summary>
+        <div class="mt-4 space-y-3 text-sm text-foreground/80">
+          <p>
+            This bookshelf visualization was created as a reusable Astro component.
+            Each book's color and height are generated consistently from its title,
+            so the same book always looks the same.
+          </p>
+          <p>
+            The bookshelf automatically arranges books across multiple shelves as needed.
+            Hover over any book to see its title, author, description, and optional review or summary.
+          </p>
+          <p class="font-medium text-foreground">
+            Want to use this component in your own project? It's designed to be portable!
+          </p>
+        </div>
+      </details>
+    </section>
+  </main>
+  <Footer />
+</Layout>
